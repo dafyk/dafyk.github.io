@@ -1,0 +1,1796 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Crew Tips | Star Trek Fleet Command</title>
+  <meta name="description" content="Collection of various useful crew combos for mobile game Star Trek Fleet Command.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta property="og:title" content="Crew Tips | Star Trek Fleet Command" />
+  <meta property="og:description" content="Collection of various useful crew combos for mobile game Star Trek Fleet Command." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dafyk.github.io" />
+  <meta property="og:image" content="https://dafyk.github.io/img/app-icon.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#171941">
+  <meta name="msapplication-TileColor" content="#171941">
+  <meta name="theme-color" content="#171941">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" href="css/frow.min.css">
+  <link rel="stylesheet" href="css/micromodal.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#171941">
+</head>
+
+<body>
+  <section class="landing">
+    <div class="frow-container">
+      <div class="frow gutters">
+        <div class="col-xs-1-1">
+          <img src="img/stfc-logo.png">
+          <h1 class="text-yellow">Crew Tips</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="CrossFade">
+      <div class='pic' id='bg1'></div>
+      <div class='pic' id='bg2'></div>
+      <div class='pic' id='bg3'></div>
+      <div class='pic' id='bg4'></div>
+      <div class='pic' id='bg5'></div>
+    </div>
+  </section>
+  <!-- ko template: { name: 'toc', foreach: data.sections[0], as: 'all' } --><!-- /ko --> 
+  <!-- ko template: { name: 'hostiles', foreach: data.sections[0].hostiles, as: 'section' } --><!-- /ko --> 
+  <!-- ko template: { name: 'armadas', foreach: data.sections[0].armadas, as: 'section' } --><!-- /ko --> 
+  <!-- ko template: { name: 'hostiles', foreach: data.sections[0].various, as: 'section' } --><!-- /ko --> 
+  <footer>
+    <div class="frow-container">
+      <div class="mt-50 pb-30">
+        <div class="frow gutters">
+          <div class="col-xs-2-3 col-sm-1-3 col-md-1-3 col-lg-1-3">
+            <img src="img/stfc-logo.png" class="mw">
+            <h3 class="text-yellow mt-10">CREW TIPS</h3>
+          </div>
+          <div class="col-xs-1-1 col-sm-2-3 col-md-2-3 col-lg-2-3">
+            <div class="frow gutters" data-bind="foreach: { data: Object.keys(data.sections[0]), as: 'section' }">
+              <div class="col-xs-1-3 col-sm-1-3 col-md-1-3 col-lg-1-3">
+                <h4 data-bind="html: section">Hostiles</h4>
+                <ul data-bind="foreach: { data: data.sections[0][section], as: 'test' }">
+                  <li>
+                    <a href="#" data-bind="html: test.title, attr: {href: '#' + test.id}">faction</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center pb-20">
+      &copy; 2023 - Made for alliance <span class="text-light">[404] Does not Exist</span> on Server 155
+    </div>
+  </footer>
+  <script type="text/html" id="toc">
+    <section>
+      <div class="frow-container">
+        <div class="mt-100">
+        <div class="frow gutters" data-bind="foreach: { data: Object.keys(all), as: 'section' }">
+          <div class="col-xs-2-3 col-sm-1-2 col-md-2-6 col-lg-1-3">
+            <div class="card eq">
+              <div class="card-header bg-blue bg-hostiles" data-bind="class: 'bg-' + section">
+                <h2 class="mt-15 text-white" data-bind="html: section">Hostiles</h2>
+              </div>
+              <div class="card-body pb-20 pt-20">
+                <ul class="toc" data-bind="foreach: { data: all[section], as: 'test' }">
+                  <li>
+                    <a href="#faction-hostiles" data-bind="html: test.title, attr: {href: '#' + test.id}">Faction Hostiles</a>
+                      <!-- ko if: test.sub -->
+                        <ul>
+                          <!-- ko foreach: { data: test.sub, as: 'sub' } -->
+                            <li>
+                              <a href="#freebooters" data-bind="html: sub.title, attr: {href: '#' + sub.sid}">Subsection</a>
+                            </li>
+                          <!-- /ko -->
+                        </ul>
+                      <!-- /ko -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <script type="text/html" id="armadas">
+    <section>
+      <div class="frow-container">
+        <div class="mt-50" data-bind="foreach: { data: rows, as: 'row' }">
+          <!-- ko if: $index()==0 -->
+          <div class="sticky">
+            <h2 class="text-white section-title" data-bind="text: section.title"></h2>
+            <h5 class="text-on-back" data-bind="text: section.order, attr:{id: section.id}">01</h5>
+          </div>
+          <!-- /ko -->
+          <div class="or">
+          <div class="frow gutters" data-bind="foreach: {data: row, as: 'card'}">
+            <!-- ko if: (card['subtitle'] || card['subtitle']===0) --><h3 class="text-teal or" data-bind="html: section.sub[card.subtitle].title, css:{'mt-0': $parentContext.$index() == 0}, attr: {id: section.sub[card.subtitle].sid}">Level 27-36</h3><!-- /ko -->
+            <div class="col-xs-2-3 col-sm-1-2 col-md-1-3 or">
+              <div class="card" data-bind="class: power">
+                <div class="card-header" data-bind="foreach: officers, as: 'officer'">
+                  <div class="officer" data-bind="css: { 'captain relative': $index() == 1 }">
+                    <small class="dname" data-bind="html: $root.officers[$data].dname"></small>
+                    <img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal">
+                  </div>
+                </div>
+                <div class="card-body">
+                  <!-- ko if: bd -->
+                  <small class="text-teal bd">Below deck</small>
+                  <div class="frow" data-bind="foreach: bd">
+                    <div class="col-xs-1-4 col-sm-1-4 col-md-1-4">
+                      <div class="officer"><img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal"></div>
+                    </div>
+                  </div>
+                  <!-- /ko -->
+                  <!-- ko if: description --><p class="text-center" data-bind="html: description"></p><!-- /ko -->
+                </div>
+                <div class="card-footer" data-bind="css:{'mt-0': (!bd) || ((!bd) && (!description)) }">
+                  <div class="frow row-between">
+                    <div>
+                      <span class="btn btn-gray btn-simple" data-bind="html: cid">ID</span>
+                      <!-- ko if: ship || shipType --><span class="btn btn-gray btn-simple"><!-- ko if: shipType --><span class="ship" data-bind="css: shipType"></span><!-- /ko --><!-- ko if: ship --><span data-bind="html: ship"></span><!-- /ko --></span><!-- /ko -->
+                    </div>
+                    <div>
+                      <span class="progress basic" data-bind="class: power"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ko if: card['css'] --><div class="divider" data-bind="class: css">&nbsp;</div><!-- /ko -->
+          </div>
+          </div>
+          <!-- ko if: section.joiner[$index()] --><div class="join" data-bind="class: section.joiner[$index()]">
+            <!-- ko if: $index()===0 || $index()===2  --><i class="icon-device_hub"></i><!-- /ko -->
+            <!-- ko if: $index()===1 --><small class="text-green">OPTIONAL</small><!-- /ko -->
+          </div><!-- /ko -->
+        </div>
+      </div>
+    </section>
+  </script>
+  <script type="text/html" id="hostiles">
+    <section>
+      <div class="frow-container">
+        <div class="mt-50">
+          <div class="sticky">
+            <h2 class="text-white section-title" data-bind="text: section.title"></h2>
+            <h5 class="text-on-back" data-bind="text: order, attr:{id: section.id}">01</h5>
+          </div>
+          
+          <div class="frow gutters" data-bind="foreach: rows, as: 'row'">
+            <!-- ko if: ($data['subtitle'] || $data['subtitle']===0) --><h3 class="text-teal" data-bind="html: section.sub[$data.subtitle].title, css:{'mt-0': $index() == 0}, attr: {id: section.sub[$data.subtitle].sid}">Level 27-36</h3><!-- /ko -->
+            <div class="col-xs-2-3 col-sm-1-2 col-md-1-3" data-bind="css: {'or': $data['css']}">
+              <div class="card" data-bind="css: {'mt-30': $data['trio']}, class: power">
+                <div class="card-header" data-bind="foreach: officers, as: 'officer'">
+                  <div class="officer" data-bind="css: { 'captain relative': $index() == 1 }">
+                    <small class="dname" data-bind="html: $root.officers[$data].dname"></small>
+                    <img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal" data-micromodal2-trigger2="modal-1">
+                  </div>
+                  <!-- div class="officer captain relative"><img src="img/111.png"></div-->
+                  <!-- div class="officer"><img src="img/111.png"></div-->
+                </div>
+                <div class="card-body">
+                  <!-- ko if: bd -->
+                  <small class="text-teal bd">Below deck</small>
+                  <div class="frow" data-bind="foreach: bd">
+                    <div class="col-xs-1-4 col-sm-1-4 col-md-1-4">
+                      <div class="officer"><img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal"></div>
+                    </div>
+                  </div>
+                  <!-- /ko -->
+                  <!-- ko if: description --><p data-bind="html: description"></p><!-- /ko -->
+                </div>
+                <div class="card-footer" data-bind="css:{'mt-0': (!bd) || ((!bd) && (!description)) }">
+                  <div class="frow row-between">
+                    <div>
+                      <span class="btn btn-gray btn-simple" data-bind="html: cid">ID</span>
+                      <!-- ko if: ship || shipType --><span class="btn btn-gray btn-simple"><!-- ko if: shipType --><span class="ship" data-bind="css: shipType"></span><!-- /ko --><!-- ko if: ship --><span data-bind="html: ship"></span><!-- /ko --></span><!-- /ko -->
+                    </div>
+                    <div>
+                      <span class="progress basic" data-bind="class: power"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ko if: $data['divider'] --><div class="width-100 hidden-xs hidden-sm" data-bind="css: {'hidden-sm': section.rows.length > 6}"></div><!-- /ko -->
+            <!-- ko if: $data['css'] --><div class="divider" data-bind="class: css">&nbsp;</div><!-- /ko -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </script>
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+      <div class="card" data-bind="class: modalData().rarity.toLowerCase()">
+        <div class="card-header">
+          <img src="img/khan.png" data-bind="attr:{ src: 'img/' + modalData().img }">
+          <div class="headers">
+            <h2 class="card-title text-white" data-bind="html: modalData().name, class: modalData().rarity.toLowerCase()">Khan Noonien Singh</h2>
+            <h5 class="text-gray" data-bind="html: modalData().crew">KHAN'S CREW</h5>
+          </div>
+        </div>
+        <div class="card-body">
+          <h6>Captain maneuver</h6> <span class="text" data-bind="html: modalData().maneuver"></span><br><br>
+          <h6>Officer ability</h6> <span class="text" data-bind="html: modalData().ability"></span>
+          <!-- ko if: modalData().bd --><br><br><h6>Below deck ability</h6> <span class="text" data-bind="html: modalData().bd"></span><!-- /ko -->
+        </div>
+        <div class="card-footer">
+          <div class="frow row-between">
+            <div class="class"><small>Class</small><br><span data-bind="html: modalData().class"></span></div>
+            <div class="class"><small>Rarity</small><br><span data-bind="html: modalData().rarity"></span></div>
+            <div class="class"><small>Faction</small><br><span data-bind="html: modalData().faction"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/knockout-3.5.1.js"></script>
+  <script src="js/micromodal.min.js"></script>
+  <!-- <script src="js/main.js"></script> -->
+  <script type="text/javascript">
+    let modalID=false;
+    MicroModal.init({
+      openClass: 'is-open',
+      awaitOpenAnimation: true,
+      awaitCloseAnimation: true
+    });
+    var closeHandler = () => { if(modalID) MicroModal.close('modal-1'); modalID=false};
+    var openModal = (d,event) => { modalID=true;data.modalData(data.officers[d]); MicroModal.show('modal-1');}
+    window.addEventListener("scroll", closeHandler);
+
+    var data = {
+      modalData: ko.observable({
+          img: 'khan.png',
+          name: false,
+          dname: false,
+          maneuver: false,
+          ability: false,
+          crew: false,
+          class: false,
+          faction: false,
+          rarity: ''
+      }),
+      officers: {
+        '111': {
+          img: '111.png',
+          name: '1 of 11',
+          dname: '1 of 11',
+          maneuver: 'The ship mitigates <em class="text-green">5%</em> more damage to the Shield Health instead of the Hull Health',
+          ability: 'The Protected Cargo is increased by <em class="text-green">30%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Command',
+          faction: 'Borg',
+          rarity: 'Rare'
+        },
+        '211': {
+          img: '211.png',
+          name: '2 of 11',
+          dname: '2 of 11',
+          maneuver: 'Two of Eleven increases the Cargo size of the ship by <em class="text-green">20%</em>',
+          ability: 'Two of Eleven increases the rate of Crystal, Gas, and Ore Mining by <em class="text-green">50%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Science',
+          faction: 'Borg',
+          rarity: 'Rare'
+        },
+        '411': {
+          img: '411.png',
+          name: '4 of 11',
+          dname: '4 of 11',
+          maneuver: 'Four of Eleven increases Ore mining speed by <em class="text-green">60%</em>',
+          ability: 'Four of Eleven increases Cargo size by <em class="text-green">40%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Engineering',
+          faction: 'Borg',
+          rarity: 'Epic'
+        },
+        '511': {
+          img: '511.png',
+          name: '5 of 11',
+          dname: '5 of 11',
+          maneuver: 'Five of Eleven Increases the Shield deflection, Armor and Dodge by <em class="text-green">200%</em> of the total Health of all Officers on the ship',
+          ability: 'Five of Eleven increases the amount of resources your ship receives from hostiles by <em class="text-green">20%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Engineering',
+          faction: 'Borg',
+          rarity: 'Epic'
+        },
+        '611': {
+          img: '611.png',
+          name: '6 of 11',
+          dname: '6 of 11',
+          maneuver: 'Every time the ship hits an opponent with a weapon attack, Six of Eleven decreases the opponent&apos;s Shield Health by <em class="text-green">20%</em> of the total Defense of all officers on the ship <br/><em>(Weapons with multiple shots will only trigger this maneuver once per attack)</em>',
+          ability: 'When attacking an Armada Target, every time the ship hits the opponent with a weapon attack, Six of Eleven increases the Accuracy, Armor Piercing and Shield Piercing of the ship by <em class="text-green">5%</em> of the total Attack of all officers on the ship <br/><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Command',
+          faction: 'Borg',
+          rarity: 'Epic'
+        },
+        '711': {
+          img: '711.png',
+          name: '7 of 11',
+          dname: '7 of 11',
+          maneuver: 'When fighting a Borg Tactical Probe, Seven of Eleven has a <em class="text-green">20%</em> chance of increasing the number of shots of each weapon by <strong>2</strong>',
+          ability: 'Seven of Eleven increases the Health of every Officer on the ship by <em class="text-green">60%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Science',
+          faction: 'Borg',
+          rarity: 'Rare'
+        },
+        '811': {
+          img: '811.png',
+          name: '8 of 11',
+          dname: '8 of 11',
+          maneuver: 'When fighting a Borg ship, Eight of Eleven increases the Chance of dealing a critical hit by <em class="text-green">10%</em>',
+          ability: 'Eight of Eleven increases the Attack of every Officer on the ship by <em class="text-green">45%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Engineering',
+          faction: 'Borg',
+          rarity: 'Uncommon'
+        },
+        '911': {
+          img: '911.png',
+          name: '9 of 11',
+          dname: '9 of 11',
+          maneuver: 'When fighting a Borg ship, Nine of Eleven decreases the Chance of dealing a critical hit of the opponent by <em class="text-green">10%</em>',
+          ability: 'Nine of Eleven increases the Defense of every Officer on the ship by <em class="text-green">45%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Command',
+          faction: 'Borg',
+          rarity: 'Uncommon'
+        },
+        cadet_mccoy: {
+          img: 'cadet_mccoy.png',
+          name: 'Cadet Leonard McCoy',
+          dname: 'Cadet McCoy',
+          maneuver: 'Cadet McCoy increases the Health of all Officers on the ship by <em class="text-green">10%</em>',
+          ability: 'During combat, Cadet McCoy increases the effectiveness of the Captain Maneuver by <em class="text-green">4%</em>',
+          crew: 'ANOTHER TIME',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Common'
+        },
+        cadet_uhura: {
+          img: 'cadet_uhura.png',
+          name: 'Cadet Nyota Uhura',
+          dname: 'Cadet Uhura',
+          maneuver: 'Cadet Uhura decreases the Weapon Damage of the opponent&apos;s ship by <em class="text-green">10%</em>',
+          ability: 'Cadet Uhura increases the Shield Health of the ship by <em class="text-green">5%</em>',
+          crew: 'ANOTHER TIME',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Common'
+        },
+        chen: {
+          img: 'chen.png',
+          name: 'Grace Chen',
+          dname: 'Chen',
+          maneuver: 'Chen increases the Dodge, Shield Deflection and Armor of the ship by <em class="text-green">20%</em> against Hostiles. Works against Hostiles of level 51 and under',
+          ability: 'If the opponent is a Hostile, Chen decreases the damage done by its Energy Weapons by <em class="text-green">10%</em>. Works against Hostiles of level 51 and under',
+          crew: 'STARFLEET ACADEMY',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Uncommon'
+        },
+        crusher: {
+          img: 'crusher.png',
+          name: 'Beverly Crusher',
+          dname: 'Crusher',
+          maneuver: 'When fighting Hostiles and Armadas, Beverly Crusher restores Shield Health each round equal to <em class="text-green">200%</em> of the Health of all Officers on the ship',
+          ability: 'When fighting Hostiles and Armadas, Beverly Crusher increases Armor, Shield Deflection, and Dodge by <em class="text-green">150%</em> of the Defense of all Officers on the ship',
+          crew: 'TNG CREW',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        georgiou: {
+          img: 'georgiou.png',
+          name: 'Georgiou',
+          dname: 'Georgiou',
+          maneuver: 'At the start of each round, if the opponent is <em class="text-warning">Burning</em>, Captain Georgiou decreases the Attack of all Officers on the opponent&apos;s ship by <em class="text-green">100%</em> for that round <br><em>Decreasing Attack may result in a decrease in Damage</em>',
+          ability: 'At the beginning of each round, Georgiou has a <em class="text-green">50%</em> chance of <em class="text-warning">Burning</em> the opponent&apos;s ship for 2 rounds',
+          crew: 'DISCOVERY CREW',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        gorkon: {
+          img: 'gorkon.png',
+          name: 'Gorkon',
+          dname: 'Gorkon',
+          maneuver: 'Gorkon increases the chances of dealing a Critical Hit by <em class="text-green">10%</em> for the first 2 Rounds',
+          ability: 'When the ship hits the opponent with a Critical Hit, Gorkon has a <em class="text-green">70%</em> chance of causing a <em class="text-warning">Hull Breach</em> for 3 rounds on the opponent&apos;s ship',
+          crew: 'KLINGON PATRIOTS',
+          class: 'Command',
+          faction: 'Klingon',
+          rarity: 'Epic'
+        },
+        jaylah: {
+          img: 'jaylah.png',
+          name: 'Jaylah',
+          dname: 'Jaylah',
+          maneuver: 'Jaylah increases the amount of resources you get from killing hostiles by <em class="text-green">100%</em> while on the Franklin and <span class="nowrap">Franklin-A</span>',
+          ability: 'When Jaylah is on the Franklin and fighting Swarm hostiles, Jaylah increases the number of shots of the Franklin and <span class="nowrap">Franklin-A</span> by <strong>1</strong>',
+          crew: 'JAYLAH',
+          class: 'Science',
+          faction: 'None',
+          rarity: 'Epic'
+        },
+        kang: {
+          img: 'kang.png',
+          name: 'Kang',
+          dname: 'Kang',
+          maneuver: 'At the start of battle, Kang has a <em class="text-green">80%</em> chance of dealing a <em class="text-warning">Hull Breach</em> to the opponent for 3 rounds',
+          ability: 'At the start of battle, Kang increases the Accuracy of the ship by <em class="text-green">100%</em> of the Attack of the crew on the ship',
+          crew: 'JAYLAH',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        khan: {
+          img: 'khan.png',
+          name: 'Khan Noonien Singh',
+          dname: 'Khan',
+          maneuver: 'When attacking a Station, Khan has <em class="text-green">50%</em> chances of drastically reducing the mitigation of all opponent&apos;s ships and defense platforms for two rounds',
+          ability: 'Every time the Ship is hit by a Ship or Defense Platform weapon attack, Khan increases the Critical Hit Chances by <em class="text-green">1%</em> (cumulative) <br/><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Command',
+          faction: 'Augments',
+          rarity: 'Epic'
+        },
+        kirk: {
+          img: 'kirk.png',
+          name: 'James T. Kirk',
+          dname: 'Kirk',
+          maneuver: 'As long as the ship has <em class="text-warning">Morale</em>, Kirk gives all Officers on the ship a bonus of <em class="text-green">40%</em> to all their stats',
+          ability: 'At the beginning of each round, Kirk has a <em class="text-green">50%</em> chance of inspiring <em class="text-warning">Morale</em> to the ship for 2 rounds',
+          crew: 'ENTERPRISE CREW',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        lorca: {
+          img: 'lorca.png',
+          name: 'Gabriel Lorca',
+          dname: 'Lorca',
+          maneuver: 'When fighting players, at the start of each round, if the opponent has <em class="text-warning">Hull Breach</em>, Lorca decreases the opponent&apos;s Weapon damage by <em class="text-green">100%</em> for this turn',
+          ability: 'At the beginning of each round, Lorca has a <em class="text-green">50%</em> chance of dealing <em class="text-warning">Hull Breach</em> to the opponent&apos;s ship for 2 rounds',
+          crew: 'TERRAN EMPIRE',
+          class: 'Science',
+          faction: 'None',
+          rarity: 'Epic'
+        },
+        moreau: {
+          img: 'moreau.png',
+          name: 'Marlena Moreau',
+          dname: 'Moreau',
+          maneuver: 'After winning a battle, Moreau heals the Shield Health by <em class="text-green">40%</em>',
+          ability: 'Moreau decreases the Armor Piercing, Shield Piercing and Accuracy of Hostiles by <em class="text-green">30%</em>',
+          crew: 'SHAKEDOWN CRUISE',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        picard: {
+          img: 'picard.png',
+          name: 'Jean-Luc Picard',
+          dname: 'Picard',
+          maneuver: 'Jean-Luc Picard increases the effectiveness of all Officer Abilities that trigger in combat by <em class="text-green">20%</em>. <br/>This ability receives the same synergy bonus from all TNG Officers, regardless of class.',
+          ability: 'Jean-Luc Picard increases your Critical Hit Damage by <em class="text-green">5%</em>',
+          crew: 'TNG CREW',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        pike: {
+          img: 'pike.png',
+          name: 'Christopher Pike',
+          dname: 'Pike',
+          maneuver: 'Christopher Pike increases the effectiveness of all Officer Abilities that trigger in combat by <em class="text-green">40%</em>',
+          ability: 'Christopher Pike increases the Ship XP earned by combat by <em class="text-green">20%</em>',
+          crew: 'SHAKEDOWN CRUISE',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        snw_ortegas: {
+          img: 'snw_ortegas.png',
+          name: 'SNW Erica Ortegas',
+          dname: 'SNW Ortegas',
+          maneuver: 'When fighting hostiles, SNW Ortegas increases critical hit chance against hostiles by <em class="text-green">15%</em>',
+          ability: 'SNW Ortegas increases Armor, Shield Deflection, and Dodge by <em class="text-green">500%</em> of total Health when attacking hostile Explorers from a Battleship',
+          crew: 'STRANGE NEW WORLDS',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        snw_pike: {
+          img: 'snw_pike.png',
+          name: 'SNW Christopher Pike',
+          dname: 'SNW Pike',
+          maneuver: 'When fighting hostiles, SNW Pike increases Shield Mitigation by <em class="text-green">4%</em>',
+          ability: 'When fighting hostiles, SNW Pike decreases hostile Shield Mitigation by <em class="text-green">10%</em>',
+          crew: 'STRANGE NEW WORLDS',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        snw_spock: {
+          img: 'snw_spock.png',
+          name: 'SNW Spock',
+          dname: 'SNW Spock',
+          maneuver: 'When fighting hostiles, SNW Spock decreases hostile critical hit chance by <em class="text-green">15%</em>',
+          ability: 'SNW Spock increases Armor, Shield Deflection, and Dodge by <em class="text-green">500%</em> of total Defense when attacking hostile Interceptors from an Explorer',
+          crew: 'STRANGE NEW WORLDS',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        snw_uhura: {
+          img: 'snw_uhura.png',
+          name: 'SNW Nyota Uhura',
+          dname: 'SNW Uhura',
+          maneuver: 'When fighting hostiles, SNW Uhura increases critical hit damage against hostiles by <em class="text-green">15%</em>',
+          ability: 'SNW Uhura increases Armor, Shield Deflection, and Dodge by <em class="text-green">500%</em> of total Attack when attacking hostile Battleships from an Interceptor',
+          crew: 'STRANGE NEW WORLDS',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        tlaan: {
+          img: 'tlaan.png',
+          name: 'T&apos;Laan',
+          dname: 'T&apos;Laan',
+          maneuver: 'T&apos;Laan increases the Ship Experience gained by <em class="text-green">15%</em>',
+          ability: 'If the opponent is a Hostile, T&apos;Laan decreases the Damage done by its Kinetic Weapons by <em class="text-green">5%</em>. Works against Hostiles of level 51 and under',
+          crew: 'STARFLEET ACADEMY',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Uncommon'
+        },
+        tores: {
+          img: 'tores.png',
+          name: 'B&apos;Elanna Torres',
+          dname: 'Torres',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'When you take damage from a non-Player hostile or Armada, B&apos;Elanna increases your Armor Piercing, Shield Piercing, and Accuracy by <em class="text-green">250%</em> of Attack for 1 round (cumulative) <br/><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          bd: '<em class="text-green">10%</em> chance each round to apply <em class="text-warning">Hull Breach</em> to non-Player hostiles or Armada for 1 round',
+          crew: 'VOYAGER',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        miles: {
+          img: 'obrien.png',
+          name: 'Miles O&apos;Brien',
+          dname: 'Miles',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'For 3 rounds, Miles O&apos;Brien has a <em class="text-green">25%</em> chance of increasing shots against an Armada by <strong>100%</strong>',
+          bd: 'Miles O&apos;Brien increases the ship&apos;s base Warp Speed by <em class="text-green">70%</em>',
+          crew: 'DEEP SPACE NINE',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        sisko: {
+          img: 'sisko.png',
+          name: 'Benjamin Sisko',
+          dname: 'Sisko',
+          maneuver: 'Benjamin Sisko increases Armor, Shield Deflection, and Dodge by <em class="text-green">400%</em> of total Health when fighting Armadas',
+          ability: 'Benjamin Sisko increases critical hit chance against Armadas by <em class="text-green">3%</em> every round (cumulative)',
+          crew: 'DEEP SPACE NINE',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        eurydice: {
+          img: 'eurydice.png',
+          name: 'Eurydice',
+          dname: 'Eurydice',
+          maneuver: 'When the ship loses Shield Health from a weapon attack, Eurydice increases the damage of the weapons by <em class="text-green">10%</em> (cumulative) <br/><em>(Weapons with multiple shots will only trigger this maneuver once per attack)</em>',
+          ability: 'When the shields are depleted, Eurydice has a <em class="text-green">35%</em> chance to heal the Shield Health by <strong>5%</strong>',
+          crew: 'MUDD&apos;S COMPANY',
+          class: 'Engineering',
+          faction: 'None',
+          rarity: 'Epic'
+        },
+        geordi: {
+          img: 'laforge.png',
+          name: 'Geordi La Forge',
+          dname: 'Geordi',
+          maneuver: 'Geordi La Forge increases the rewards your ship receives from defeated Armada Targets by <em class="text-green">50%</em>',
+          ability: 'Geordi La Forge increases Weapon Damage against Klingon Hostiles and Klingon Armadas by <em class="text-green">100%</em>',
+          crew: 'TNG CREW',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        bashir: {
+          img: 'bashir.png',
+          name: 'Julian Bashir',
+          dname: 'Bashir',
+          maneuver: 'Julian Bashir increases Critical Hit Damage by <em class="text-green">50%</em> against Solo Armadas',
+          ability: 'Julian Bashir increases Critical Hit Chance by <em class="text-green">20%</em> against Solo Armadas',
+          crew: 'DEEP SPACE NINE',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        gaila: {
+          img: 'gaila.png',
+          name: 'Gaila',
+          dname: 'Gaila',
+          maneuver: 'Gaila increases the Parsteel rewards for defeating a Hostile by <em class="text-green">25%</em>',
+          ability: 'If the opponent is a Hostile, Gaila decreases the damage from its Critical Hits by <em class="text-green">10%</em>',
+          crew: 'STARFLEET ACADEMY',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Common'
+        },
+        troi: {
+          img: 'troi.png',
+          name: 'Deanna Troi',
+          dname: 'Troi',
+          maneuver: 'Deanna Troi reduces the Crit Chance of Armada Targets by <em class="text-green">15%</em>',
+          ability: 'Deanna Troi increases Weapon Damage against Romulan Hostiles and Romulan Armadas by <em class="text-green">100%</em>',
+          crew: 'TNG CREW',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        worf: {
+          img: 'worf.png',
+          name: 'Worf',
+          dname: 'Worf',
+          maneuver: 'After winning a battle, Worf increases the Warp Speed of the ship by <em class="text-green">70%</em>. This bonus does not stack, and is removed when returning to your station',
+          ability: 'Worf increases all Mitigation stats against non-player targets by <em class="text-green">20%</em>',
+          crew: 'TNG CREW',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        klaa: {
+          img: 'klaa.png',
+          name: 'Klaa',
+          dname: 'Klaa',
+          maneuver: 'Klaa increases the Impulse Speed of the ship by <em class="text-green">25%</em>',
+          ability: 'Klaa increases the Critical Hit Damage of the ship by <em class="text-green">8%</em>',
+          crew: 'GLORY IN THE KILL',
+          class: 'Command',
+          faction: 'Klingon',
+          rarity: 'Uncommon'
+        },
+        komal: {
+          img: 'komal.png',
+          name: 'Komal',
+          dname: 'Komal',
+          maneuver: 'When inside a Battleship, Komal increases Weapon Damage against players by <em class="text-green">20%</em>',
+          ability: 'If the opponent is a player, Komal decreases the damage made by its Kinetic Weapons by <em class="text-green">5%</em>',
+          crew: 'GLORY IN THE KILL',
+          class: 'Engineering',
+          faction: 'Klingon',
+          rarity: 'Common'
+        },
+        vixis: {
+          img: 'vixis.png',
+          name: 'Vixis',
+          dname: 'Vixis',
+          maneuver: 'At the beginning of each round, Vixis has a <em class="text-green">6%</em> chance of delaying the opponent Weapon Fire by one round',
+          ability: 'Vixis decreases the Energy Weapon Damage of opponent players by <em class="text-green">10%</em>',
+          crew: 'GLORY IN THE KILL',
+          class: 'Science',
+          faction: 'Klingon',
+          rarity: 'Uncommon'
+        },
+        pan: {
+          img: 'pan.png',
+          name: 'Pan',
+          dname: 'Pan',
+          maneuver: 'Pan increases the Impulse Speed of the ship by <em class="text-green">20%</em>',
+          ability: 'At the start of each round, Pan has a <em class="text-green">25%</em> chance of applying a <em class="text-warning">Hull Breach</em> to his own ship for 3 rounds',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Engineering',
+          faction: 'Augments',
+          rarity: 'Rare'
+        },
+        rima: {
+          img: 'rima.png',
+          name: 'Rima',
+          dname: 'Rima',
+          maneuver: 'At the start of each round, if the ship has a <em class="text-warning">Hull Breach</em>, Rima increases the Damage of the ship by <em class="text-green">40%</em> for this round',
+          ability: 'At the start of each round, if the ship has a <em class="text-warning">Hull Breach</em>, Rima adds <em class="text-green">5%</em> to Critical Hit chances',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Command',
+          faction: 'Augments',
+          rarity: 'Rare'
+        },
+        navi: {
+          img: 'navi.png',
+          name: 'Navi',
+          dname: 'Navi',
+          maneuver: 'At the start of each round, if the ship has a <em class="text-warning">Hull Breach</em>, Navi increases the Critical Hit damage bonus by <em class="text-green">20%</em> for this round',
+          ability: 'At the start of each round, if the ship has a <em class="text-warning">Hull Breach</em>, Navi increases the Armor, Shield Deflection and Dodge of the ship by <em class="text-green">50%</em> for this round',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Science',
+          faction: 'Augments',
+          rarity: 'Rare'
+        },
+        kuron: {
+          img: 'kuron.png',
+          name: 'Kuron',
+          dname: 'Kuron',
+          maneuver: 'Kuron has a <em class="text-green">50%</em> chance to automatically recharge all kinetic weapons on the first turn',
+          ability: 'After destroying a ship, Kuron increases the Impulse Speed by <em class="text-green">25%</em> until his ship&apos;s next battle or its return to the Station',
+          crew: 'BLOOD &amp; HONOR',
+          class: 'Command',
+          faction: 'Klingon',
+          rarity: 'Rare'
+        },
+        snw_una: {
+          img: 'snw_una.png',
+          name: 'SNW Una Chin-Riley',
+          dname: 'SNW Una',
+          maneuver: 'When fighting hostiles, SNW Una increases base Weapon Damage by <em class="text-green">100%</em>',
+          ability: 'SNW Una increases Impulse Speed by <em class="text-green">15</em>',
+          crew: 'STRANGE NEW WORLDS',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        helvia: {
+          img: 'helvia.png',
+          name: 'Helvia',
+          dname: 'Helvia',
+          maneuver: 'Helvia increases the Mining Rate of the ship by <em class="text-green">40%</em> when mining Parsteel',
+          ability: 'As long as the Cargo of the ship is empty, Helvia increases its Warp speed by <em class="text-green">25%</em>',
+          crew: 'SURVEYORS &amp; MINERS',
+          class: 'Command',
+          faction: 'Romulan',
+          rarity: 'Common'
+        },
+        domitia: {
+          img: 'domitia.png',
+          name: 'Domitia',
+          dname: 'Domitia',
+          maneuver: 'Domitia increases the Mining Rate of the ship by <em class="text-green">40%</em> when mining Dilithium',
+          ability: 'As long as the Cargo of the ship is full, Domitia increases its Warp speed by <em class="text-green">25%</em>',
+          crew: 'SURVEYORS &amp; MINERS',
+          class: 'Science',
+          faction: 'Romulan',
+          rarity: 'Common'
+        },
+        stamets: {
+          img: 'stamets.png',
+          name: 'Origins Stamets',
+          dname: 'Stamets',
+          maneuver: 'Origins Stamets increases the Health of all the Officers on the ship by <em class="text-green">10</em>',
+          ability: 'Origins Stamets increases the Warp Speed of the ship by <em class="text-green">30%</em>',
+          crew: 'DISCOVERY ORIGINS',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Common'
+        },
+        otto: {
+          img: 'otto.png',
+          name: 'Otto',
+          dname: 'Otto',
+          maneuver: 'At the start of each round, if the target of the ship is a Defense Platform, Otto increases the damage of the ship by <em class="text-green">20%</em> for that round',
+          ability: 'Otto increases the Attack of each officer on the Bridge of the ship by <em class="text-green">20%</em>',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Engineering',
+          faction: 'Augments',
+          rarity: 'Uncommon'
+        },
+        kati: {
+          img: 'kati.png',
+          name: 'Kati',
+          dname: 'Kati',
+          maneuver: 'At the start of each round, if the target of the ship is a Defense Platform, Kati increases the Chances of a Critical Hit by <em class="text-green">4%</em> for that round',
+          ability: 'When attacking a Station, Kati increases the Critical Hit Damage by <em class="text-green">15%</em>',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Science',
+          faction: 'Augments',
+          rarity: 'Uncommon'
+        },
+        joaquin: {
+          img: 'joaquin.png',
+          name: 'Joaquin',
+          dname: 'Joaquin',
+          maneuver: 'Joaquin increases the Protected Cargo of the ship by <em class="text-green">50%</em>',
+          ability: 'Joaquin increases the Mining Rate of the ship by <em class="text-green">40%</em> when mining Corrupted Data and Decoded Data',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Command',
+          faction: 'Augments',
+          rarity: 'Uncommon'
+        },
+        harrison: {
+          img: 'harrison.png',
+          name: 'John Harrison',
+          dname: 'Harrison',
+          maneuver: 'When fighting Explorers, John Harrison increases the Weapon damage of the ship by <em class="text-green">20%</em>',
+          ability: 'For the first round of combat, John Harrison ignores <em class="text-green">60%</em> of the opponent&apos;s shield',
+          crew: 'SECTION 31',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        rom: {
+          img: 'rom.png',
+          name: 'Rom',
+          dname: 'Rom',
+          maneuver: 'When attacking a station, Rom delays opponent ship and defense platform Weapon Fire for <em class="text-green">1</em> round. <br/><em>(This ability does not gain synergy group benefits)</em>',
+          ability: 'When attacking a station, Rom increases the number of shots of the ship&apos;s weapons by <em class="text-green">50%</em>',
+          crew: 'FERENGI CONGLOMERATE',
+          class: 'Engineering',
+          faction: 'Ferengi',
+          rarity: 'Epic'
+        },
+        joachim: {
+          img: 'joachim.png',
+          name: 'Joachim',
+          dname: 'Joachim',
+          maneuver: 'When attacking a Station, Joachim has <em class="text-green">50%</em> chances of greatly increasing the mitigation of the ship for the first round of combat',
+          ability: 'When attacking a Station, Joachim decreases the Weapon Damage of all opponent&apos;s Ships and Defense Platforms by <em class="text-green">10%</em>',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Science',
+          faction: 'Augments',
+          rarity: 'Rare'
+        },
+        marla: {
+          img: 'marla.png',
+          name: 'Marla McGivers',
+          dname: 'Marla',
+          maneuver: 'Marla increases the Repair Speed of the ship by <em class="text-green">20%</em>',
+          ability: 'Marla increases the Attack, Defense and Health of the captain by <em class="text-green">50%</em>',
+          crew: 'KHAN&apos;S CREW',
+          class: 'Engineering',
+          faction: 'Augments',
+          rarity: 'Rare'
+        },
+        hgworf: {
+          img: 'hgworf.png',
+          name: 'Honorguard Worf',
+          dname: 'HG Worf',
+          maneuver: 'When fighting other players, Honorguard Worf increases the ship&apos;s Armor Piercing by <em class="text-green">30%</em> of Crew Attack whenever the ship scores a critical hit',
+          ability: 'For the first 8 rounds of combat against other players, Honorguard Worf increases the Critical Hit Chance of the ship by <em class="text-green">45%</em>',
+          crew: 'KHITOMER&apos;S REVENGE',
+          class: 'Command',
+          faction: 'Klingon',
+          rarity: 'Epic'
+        },
+        tal: {
+          img: 'tal.png',
+          name: 'Tal',
+          dname: 'Tal',
+          maneuver: 'When fighting Battleships, Tal increases the Weapon damage of the ship by <em class="text-green">20%</em>',
+          ability: 'As long as the opponent ship is <em class="text-warning">Burning</em>, Tal decreases its Hull Health by <em class="text-green">5%</em> each turn. Works against Hostiles of level 60 and under',
+          crew: 'ROMULAN PATRIOTS',
+          class: 'Engineering',
+          faction: 'Romulan',
+          rarity: 'Rare'
+        },
+        laan: {
+          img: 'laan.png',
+          name: 'SNW La&apos;an Noonien-Singh',
+          dname: 'SNW La&apos;an',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'SNW La&apos;an increases base Warp Speed by <em class="text-green">50%</em>',
+          bd: 'SNW La&apos;an increases the ship&apos;s base Max Cargo by <em class="text-green">25%</em>',
+          crew: 'STRANGE NEW WORLDS',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        stonn: {
+          img: 'stonn.png',
+          name: 'Stonn',
+          dname: 'Stonn',
+          maneuver: 'Stonn increases the Mining Rate of the ship by <em class="text-green">40%</em> when mining Ore',
+          ability: 'Stonn increases the Cargo size of the ship by <em class="text-green">20%</em>',
+          crew: 'SURVEYORS &amp; MINERS',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        betor: {
+          img: 'betor.png',
+          name: 'B&apos;Etor',
+          dname: 'B&apos;Etor',
+          maneuver: 'When on a ship that can use cloaking, B&apos;Etor increases the duration the ship can stay cloaked by <em class="text-green">20%</em>',
+          ability: 'When on the Amalgam, B&apos;Etor boosts the Amalgam&apos;s bonus loot ship ability by <em class="text-green">10%</em>',
+          crew: 'PRIDE OF ROMULUS',
+          class: 'Science',
+          faction: 'Romulan',
+          rarity: 'Rare'
+        },
+        hugh: {
+          img: 'hugh.png',
+          name: 'Hugh',
+          dname: 'Hugh',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'Hugh increases the Impulse Speed of your ship by <em class="text-green">5%</em>',
+          bd: 'Hugh has <em class="text-green">45%</em> chance to increase Critical Hit Chance by 25% for 2 rounds after being hit by a Hostile (This ability can stack). <br><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Engineering',
+          faction: 'Borg',
+          rarity: 'Epic'
+        },
+        changeling: {
+          img: 'changelingkira.png',
+          name: 'Changeling Kira',
+          dname: 'Changeling',
+          maneuver: 'Changeling Kira decreases critical hit chance of Cardassian Armadas by <em class="text-green">2%</em> every round <em>(cumulative)</em>',
+          ability: 'Changeling Kira decreases Armor, Shield Deflection, and Dodge of Armadas by <em class="text-green">10%</em> of Attack every time you hit it with a weapon',
+          crew: 'DEEP SPACE NINE',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        doctor: {
+          img: 'doctor.png',
+          name: 'The Doctor',
+          dname: 'Doctor',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'When you take hull damage from a non-Player hostile or Armada, The Doctor increases your Armor, Shield Deflection, and Dodge by <em class="text-green">300%</em> of Health for 2 rounds (cumulative). <br><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          bd: 'Increases all resources dropped by hostiles by <em class="text-green">15%</em>',
+          crew: 'VOYAGER',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        janeway: {
+          img: 'janeway.png',
+          name: 'Kathryn Janeway',
+          dname: 'Janeway',
+          maneuver: 'When you take hull damage from a non-Player hostile or Armada, Kathryn Janeway increases your Shield Mitigation by <em class="text-green">6%</em> for 1 round (cumulative). <br><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          ability: 'At the start of combat, Kathryn Janeway increases your Isolytic Cascade damage by <em class="text-green">10%</em> against non-Player hostiles and Armadas.<br><br>Isolytic Cascade multiplies your <em class="text-green">total damage</em>, including <em class="text-green">Isolytic Damage</em>, and all research and other bonuses.',
+          crew: 'VOYAGER',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Epic'
+        }
+      },
+      sections: [{
+        hostiles: [
+          {
+            title: 'Faction Hostiles',
+            id: 'faction-hostiles',
+            ammount: 4,
+            order: '01',
+            rows: [
+              {
+                cid: 'FH1',
+                power: 'basic',
+                description: false,
+                shipType: false,
+                ship: false,
+                officers: ['cadet_mccoy', 'cadet_uhura', 'tlaan'],
+                bd: false, //['moreau', 'pike', 'tlaan']
+              },
+              {
+                cid: 'FH2',
+                power: 'basic',
+                description: false,
+                shipType: false,
+                ship: false,
+                officers: ['cadet_mccoy', 'cadet_uhura', 'chen'],
+                bd: false,
+                divider: true
+              },
+              {
+                cid: 'FH3',
+                power: 'epic',
+                description: false,
+                shipType: false,
+                ship: false,
+                officers: ['moreau', 'pike', 'tlaan'],
+                bd: false
+              },
+              {
+                cid: 'FH4',
+                power: 'epic',
+                description: false,
+                shipType: false,
+                ship: false,
+                officers: ['moreau', 'pike', 'chen'],
+                bd: false
+              }
+            ]
+          },
+          {
+          title: 'Borg Probes',
+          id: 'borg-probes',
+          sub: [{title: 'Level 27 &mdash; 33', sid: 'borg-probes-low'},{title: 'Level 36+', sid: 'borg-probes-high'}],
+          order: '02',
+          rows: [
+              {
+                cid: 'BP1',
+                subtitle: 0,
+                power: 'basic',
+                officers: ['811','711','911'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar'
+              },
+              {
+                cid: 'BP2',
+                power: 'basic',
+                officers: ['811','711','111'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar'
+              },
+              {
+                cid: 'BP3',
+                power: 'rare',
+                officers: ['moreau','pike','tlaan'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar',
+                divider: true
+              },
+              {
+                cid: 'BP4',
+                power: 'rare',
+                officers: ['711','511','tlaan'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar'
+              },
+              {
+                cid: 'BP5',
+                power: 'epic',
+                officers: ['tores','511','711'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar'
+              },
+              {
+                cid: 'BP6',
+                power: 'epic',
+                officers: ['711','511','tlaan'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar'
+              },
+              {
+                cid: 'BP7',
+                subtitle: 1,
+                power: 'epic',
+                officers: ['tores','snw_pike','snw_uhura'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar Talios'
+              },
+              {
+                cid: 'BP8',
+                power: 'epic',
+                officers: ['511','snw_pike','snw_uhura'],
+                bd: false,
+                description: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar Talios'
+              }
+            ]
+          },
+          {
+            title: 'Freebooters',
+            id: 'freebooters',
+            order: '03',
+            ammount: 1,
+            rows: [
+              {
+                cid: 'FB1<sup class="text-warning">1</sup>',
+                power: 'epic',
+                shipType: 'interceptor',
+                css: 'or',
+                description: 'Below deck stacked for <strong class="text-orange">attack</strong>',
+                officers: ['khan','snw_uhura','gorkon'],
+                ship: false,
+                bd: false
+              },
+              {
+                cid: 'FB1<sup class="text-warning">2</sup>',
+                power: 'epic',
+                shipType: 'battleship',
+                css: 'or hide2',
+                description: 'Below deck stacked for <strong class="text-orange">health</strong>',
+                officers: ['khan','snw_ortegas','gorkon'],
+                ship: false,
+                bd: false
+              },
+              {
+                cid: 'FB1<sup class="text-warning">3</sup>',
+                power: 'epic',
+                shipType: 'explorer',
+                css: 'or hide3',
+                description: 'Below deck stacked for <strong class="text-orange">defense</strong>',
+                officers: ['khan','snw_spock','gorkon'],
+                ship: false,
+                bd: false
+              }
+            ]
+          },
+          {
+            title: 'Swarms',
+            id: 'swarms',
+            order: '04',
+            ammount: 6,
+            rows: [
+              {
+                cid: 'SW1',
+                power: 'basic',
+                officers: ['cadet_mccoy','cadet_uhura','tlaan'],
+                bd: false,
+                description: false,
+                shipType: 'explorer',
+                ship: 'Franklin'
+              },
+              {
+                cid: 'SW2',
+                power: 'basic',
+                officers: ['moreau','pike','tlaan'],
+                bd: false,
+                description: false,
+                shipType: 'explorer',
+                ship: 'Franklin'
+              },
+              {
+                cid: 'SW3',
+                power: 'rare',
+                officers: ['kang','crusher','jaylah'],
+                bd: false,
+                description: false,
+                shipType: 'explorer',
+                ship: 'Franklin'
+              },
+              {
+                cid: 'SW4',
+                power: 'rare',
+                officers: ['crusher','picard','jaylah'],
+                bd: false,
+                description: false,
+                shipType: 'explorer',
+                ship: 'Franklin'
+              },
+              {
+                cid: 'SW5',
+                power: 'epic',
+                officers: ['jaylah','snw_pike','snw_spock'],
+                bd: false,
+                description: false,
+                shipType: 'explorer',
+                ship: 'Franklin'
+              },
+              {
+                cid: 'SW6',
+                power: 'epic',
+                officers: ['kang','snw_pike','snw_spock'],
+                bd: false,
+                description: false,
+                shipType: 'explorer',
+                ship: 'Franklin'
+              }
+            ]
+          },
+          {
+            title: 'Hirogens',
+            id: 'hirogens',
+            ammount: '2',
+            order: '05',
+            rows: [
+              {
+               cid: 'HG1',
+                power: 'basic',
+                officers: ['moreau','pike','chen'],
+                bd: false,
+                description: false,
+                shipType: false,
+                ship: false,
+                divider: true
+              },
+              {
+                cid: 'HG2<sup class="text-warning">1</sup>',
+                power: 'rare',
+                shipType: 'interceptor',
+                css: 'or',
+                trio: true,
+                description: 'Isolytic damage crew for <strong>interceptors</strong>, requires <em class="text-warning">BLADE OF TKON</em> artifact.',
+                officers: ['khan','511','lorca'],
+                bd: false,
+                ship: false
+              },
+              {
+               cid: 'HG2<sup class="text-warning">2</sup>',
+                power: 'rare',
+                shipType: 'explorer',
+                css: 'or hide2',
+                description: 'Isolytic damage crew for <strong>explorers</strong>, requires <em class="text-warning">CAPTAIN PROTON&apos;S BLASTER</em> artifact.',
+                officers: ['khan','511','kirk'],
+                bd: false,
+                ship: false
+              },
+              {
+               cid: 'HG2<sup class="text-warning">3</sup>',
+                power: 'rare',
+                shipType: 'battleship',
+                css: 'or hide3',
+                description: 'Isolytic damage crew for <strong>battleships</strong>, requires <em class="text-warning">VIDIIAN HONATTA ORGAN HARVESTER</em> artifact.',
+                officers: ['khan','511','georgiou'],
+                bd: false,
+                ship: false
+              }
+            ]
+          },
+          {
+            title: 'Species 8472',
+            id: 's8472',
+            ammount: '2',
+            order: '06',
+            rows: [
+              {
+               cid: 'S81',
+                power: 'rare',
+                officers: ['khan','511','tores'],
+                description: false,
+                shipType: 'explorer',
+                ship: 'Voyager',
+                bd: false,
+                divider: false
+              },
+              {
+               cid: 'S82',
+                power: 'rare',
+                officers: ['khan','511','janeway'],
+                description: false,
+                shipType: 'explorer',
+                ship: 'Voyager',
+                bd: false,
+                divider: true
+              },
+              {
+               cid: 'S83',
+                power: 'epic',
+                officers: ['lorca','511','janeway'],
+                bd: ['hugh', 'doctor'],
+                description: false,
+                shipType: 'explorer',
+                ship: 'Voyager',
+                divider: false
+              },
+              {
+               cid: 'S84',
+                power: 'epic',
+                officers: ['lorca','511','tores'],
+                bd: ['hugh', 'doctor'],
+                description: false,
+                shipType: 'explorer',
+                ship: 'Voyager',
+                divider: false
+              }
+            ]
+          },
+          {
+            title: 'Actians',
+            id: 'actians',
+            sub: [{title: 'Common <em>Tal</em> combos', sid: 'actians-tal'}],
+            ammount: '4*',
+            order: '07',
+            rows: [
+              {
+                cid: 'AC1',
+                power: 'epic',
+                shipType: 'battleship',
+                ship: 'Mantis',
+                description: false,
+                officers: ['snw_spock','snw_pike','snw_una'],
+                divider: true,
+                bd: false
+              },
+              {
+                cid: 'AC2',
+                power: 'rare',
+                subtitle: 0,
+                ship: false,
+                shipType: false,
+                description: false,
+                officers:['tal','511','georgiou'],
+                bd: false,
+              },
+              {
+                cid: 'AC3',
+                power: 'rare',
+                ship: false,
+                shipType: false,
+                description: false,
+                officers: ['tal','crusher','georgiou'],
+                bd: false,
+                divider: true
+              },
+              {
+                cid: 'AC4<sup class="text-warning">1</sup>',
+                power: 'rare',
+                css: 'or',
+                shipType: 'battleship',
+                ship: false,
+                description: false,
+                trio: true,
+                officers: ['tal','snw_ortegas','georgiou'],
+                bd: false
+              },
+              {
+                cid: 'AC4<sup class="text-warning">2</sup>',
+                power: 'rare',
+                css: 'or',
+                shipType: 'interceptor',
+                ship: false,
+                css: 'hide2',
+                description: false,
+                officers: ['tal','snw_uhura','georgiou'],
+                bd: false
+              },
+              {
+                cid: 'AC4<sup class="text-warning">3</sup>',
+                power: 'rare',
+                css: 'or',
+                shipType: 'explorer',
+                ship: false,
+                css: 'hide3',
+                description: false,
+                officers: ['tal','snw_spock','georgiou'],
+                bd: false,
+                divider: true
+              }
+            ]
+          }
+        ],//hostiles
+        armadas: [
+          {
+            title: 'Expansion cubes',
+            id: 'expansion-cubes',
+            ammount: 1,
+            order: '08',
+            joiner: ['one','two',false],
+            rows: [
+              [{
+                cid: 'EC<span class="warning">1</span>',
+                power: 'epic',
+                description: '<h4 class="text-orange">ARMADA LEADER</h4>',
+                css: 'two armada',
+                officers: ['crusher','picard','miles'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'EC<span class="warning">2</span>',
+                power: 'rare',
+                description: '<h4 class="text-orange">ARMADA LEADER</h4>',
+                joiner: 'top',
+                css: 'hide2',
+                officers: ['moreau','pike','miles'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }],
+              [{
+                cid: 'EC<span class="warning">3</span>',
+                power: 'epic',
+                description: '<h4 class="text-info">PARTICIPANTS</h4>',
+                css: 'two blue',
+                officers: ['611','511','miles'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'EC<span class="warning">4</span>',
+                power: 'epic',
+                description: '<h4 class="text-info">PARTICIPANTS</h4>',
+                joiner: 'middle',
+                css: 'hide2',
+                officers: ['sisko','miles','611'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }],
+              [{
+                cid: 'EC<span class="warning">5</span>',
+                power: 'epic',
+                css: 'two and green',
+                description: '<h4 class="text-green">One of the participants</h4>',
+                officers: ['611','511','lorca'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'EC<span class="warning">6</span>',
+                power: 'basic',
+                description: '<h4 class="text-green">One of the participants</h4>',
+                joiner: 'bottom',
+                css: 'hide2',
+                officers: ['711','911','811'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }]
+            ]
+          },
+          {
+            title: 'Solo armadas',
+            id: 'solo-armadas',
+            sub: [{title: 'General Crew', sid: 'solo-general'},{title: 'Loot Boost Crew', sid: 'solo-loot-boost'},{title: 'Punch Up Crew', sid: 'solo-punch-up'}],
+            ammount: 1,
+            order: '09',
+            joiner: [false,false,false],
+            rows: [
+              [{
+                cid: 'SL1<sup class="text-warning">1</sup>',
+                subtitle: 0,
+                power: 'epic',
+                css: 'three and green',
+                description: '<h4 class="text-green">SHIP A</h4>',
+                joiner: false,
+                officers: ['611','511','khan'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'SL1<sup class="text-warning">2</sup>',
+                power: 'epic',
+                description: '<h4 class="text-green">SHIP B</h4>',
+                officers: ['miles','sisko','lorca'],
+                css: 'three and green hide2',
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'SL1<sup class="text-warning">3</sup>',
+                power: 'epic',
+                shipType: 'interceptor',
+                ship: 'Defiant',
+                css: 'hide2',
+                description: '<h4 class="text-green">SHIP C</h4>',
+                officers: ['crusher','picard','eurydice'],
+                bd: false
+              }],
+              [{
+                cid: 'SL2<sup class="text-warning">1</sup>',
+                subtitle: 1,
+                power: 'epic',
+                css: 'three and green',
+                description: '<h4 class="text-green">SHIP A</h4>',
+                joiner: false,
+                officers: ['miles','511','khan'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'SL2<sup class="text-warning">2</sup>',
+                power: 'epic',
+                description: '<h4 class="text-green">SHIP B</h4>',
+                officers: ['crusher','geordi','picard'],
+                css: 'three and green hide2',
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'SL2<sup class="text-warning">3</sup>',
+                power: 'epic',
+                shipType: 'explorer',
+                ship: 'Enterprise',
+                css: 'hide3',
+                description: '<h4 class="text-green">SHIP C</h4>',
+                officers: ['kirk','sisko','lorca'],
+                bd: false
+              }],
+              [{
+                cid: 'SL3<sup class="text-warning">1</sup>',
+                subtitle: 2,
+                power: 'epic',
+                css: 'three and green',
+                description: '<h4 class="text-green">SHIP A</h4>',
+                joiner: false,
+                officers: ['miles','sisko','bashir'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'SL3<sup class="text-warning">2</sup>',
+                power: 'epic',
+                description: '<h4 class="text-green">SHIP B</h4>',
+                officers: ['611','511','khan'],
+                css: 'three and green hide2',
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'SL3<sup class="text-warning">3</sup>',
+                power: 'epic',
+                shipType: 'explorer',
+                ship: 'Enterprise',
+                css: 'hide3',
+                description: '<h4 class="text-green bold">SHIP C</h4>',
+                officers: ['crusher','kirk','lorca'],
+                bd: false
+              }]
+            ]
+          },
+          {
+            title: 'Cardassian stations',
+            id: 'cardassian-stations',
+            sub: [{title: 'Uncommon', sid: 'cardassian-stations-uncommon'},{title: 'Rare &amp; Epic armadas', sid: 'cardassian-stations-rare-and-epic'}],
+            ammount: 1,
+            order: '10',
+            joiner: ['one',false,'one',false],
+            rows: [
+              [{
+                cid: 'CS1<sup class="text-warning">1</sup>',
+                subtitle: 0,
+                power: 'epic',
+                description: '<h4 class="text-orange">ARMADA LEADER</h4>',
+                css: 'two armada',
+                officers: ['crusher','picard','gaila'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'CS1<sup class="text-warning">2</sup>',
+                power: 'rare',
+                description: '<h4 class="text-orange bold">ARMADA LEADER</h4>',
+                css: 'hide2',
+                joiner: 'top',
+                officers: ['moreau','pike','gaila'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }],
+              [{
+                cid: 'CS1<sup class="text-warning">3</sup>',
+                power: 'epic',
+                description: '<h4 class="text-info">PARTICIPANTS</h4>',
+                css: 'two blue',
+                officers: ['611','511','gaila'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'CS1<sup class="text-warning">4</sup>',
+                power: 'epic',
+                description: '<h4 class="text-info">PARTICIPANTS</h4>',
+                css: 'hide2',
+                joiner: 'middle',
+                officers: ['khan','511','611'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }],
+              [{
+                cid: 'CS2<sup class="text-warning">1</sup>',
+                subtitle: 1,
+                power: 'epic',
+                description: '<h4 class="text-orange bold">ARMADA LEADER</h4>',
+                css: 'two armada',
+                officers: ['worf','troi','crusher'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'CS2<sup class="text-warning">2</sup>',
+                power: 'rare',
+                description: '<h4 class="text-orange bold">ARMADA LEADER</h4>',
+                css: 'hide2',
+                joiner: 'top',
+                officers: ['moreau','pike','gaila'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }],
+              [{
+                cid: 'CS2<sup class="text-warning">3</sup>',
+                power: 'epic',
+                description: '<h4 class="text-info">PARTICIPANTS</h4>',
+                css: 'two blue',
+                officers: ['611','511','khan'],
+                bd: false,
+                shipType: false,
+                ship: false
+              },
+              {
+                cid: 'CS2<sup class="text-warning">4</sup>',
+                power: 'epic',
+                description: '<h4 class="text-info">PARTICIPANTS</h4>',
+                css: 'hide2',
+                joiner: 'middle',
+                officers: ['miles','sisko','changeling'],
+                bd: false,
+                shipType: false,
+                ship: false
+              }]
+            ]
+          },
+          {
+            title: 'Borg cubes',
+            id: 'borg-cubes',
+            ammount: 1,
+            order: '11',
+            joiner: ['one single',false],
+            rows: [
+              [{
+                cid: 'BC<span class="warning">1</span>',
+                power: 'epic',
+                description: '<h4 class="text-orange bold">ARMADA LEADER</h4>',
+                officers: ['611','511','khan'],
+                bd: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;Dar'
+              }],
+              [{
+                cid: 'BC<span class="warning">2</span>',
+                power: 'epic',
+                description: '<h4 class="text-info">WEAKEST PARTICIPANT</h4>',
+                css: 'hide2',
+                officers: ['711','911','811'],
+                bd: false,
+                shipType: 'interceptor',
+                ship: 'Vi&apos;Dar'
+              }]
+            ]
+          }
+        ],//armadas
+        various: [
+          {
+            title: 'Various boosts',
+            id: 'various-boosts',
+            sub: [{title: 'Impulse boost', sid: 'impulse-boost'},{title: 'Warp boost', sid: 'warp-boost'},{title: 'Cargo boost', sid: 'cargo-boost'}],
+            ammount: 3,
+            order: '12',
+            rows:[
+              {
+                subtitle: 0,
+                cid: 'IB<span class="warning">1</span>',
+                power: 'basic',
+                officers: ['komal','klaa','vixis'],
+                shipType: false,
+                ship: false,
+                description: false,
+                bd: false
+              },
+              {
+                cid: 'IB<span class="warning">2</span>',
+                power: 'rare',
+                officers: ['rima','pan','navi'],
+                shipType: false,
+                ship: false,
+                description: false,
+                bd: false
+              },
+              {
+                cid: 'IB<span class="warning">3</span>',
+                power: 'epic',
+                officers: ['kuron','pan','snw_una'],
+                shipType: false,
+                ship: false,
+                description: false,
+                bd: false
+              },
+              {
+                subtitle: 1,
+                cid: 'WB<span class="warning">1</span>',
+                power: 'epic',
+                bd: ['miles'],
+                officers: ['helvia','stamets','laan'],
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                subtitle: 2,
+                cid: 'CB<span class="warning">1</span>',
+                power: 'epic',
+                bd: ['laan'],
+                officers: ['411','211','stonn'],
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                cid: 'CB<span class="warning">1</span>',
+                power: 'epic',
+                bd: ['laan'],
+                officers: ['411','211','betor'],
+                shipType: 'survey',
+                ship: 'Amalgam',
+                description: false
+              }
+            ]
+          },
+          {
+            title: 'Base cracking',
+            id: 'base-cracking',
+            order: '13',
+            ammount: 3,
+            rows: [
+              {
+                cid: 'CR<span class="warning">1</span>',
+                power: 'basic',
+                officers: ['kati','otto','joaquin'],
+                bd: false,
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                cid: 'CR<span class="warning">2</span>',
+                power: 'rare',
+                officers: ['joachim','khan','marla'],
+                bd: false,
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                cid: 'CR<span class="warning">3</span>',
+                power: 'epic',
+                officers: ['hgworf','rom','harrison'],
+                bd: false,
+                shipType: false,
+                ship: false,
+                description: false
+              }
+            ]
+          }
+        ]//various
+      }]
+    }
+    ko.applyBindings(data);
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<!--   <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+ -->
+</body>
+</html>
