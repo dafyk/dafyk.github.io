@@ -1010,6 +1010,17 @@
           class: 'Engineering',
           faction: 'Federation',
           rarity: 'Rare'
+        },
+        mavery: {
+          img: 'mavery.png',
+          name: 'Mavery',
+          dname: 'Mavery',
+          maneuver: 'Increase Max Cargo by <em class="text-green">40%</em>',
+          ability: 'Increase Crystal, Gas and Ore Mining speed by <em class="text-green">100%</em>',
+          crew: 'SYNDICATE',
+          class: 'Science',
+          faction: 'None',
+          rarity: 'Epic'
         }
       },
       sections: [{
@@ -1882,7 +1893,7 @@
               {
                 subtitle: 2,
                 cid: 'CB<span class="warning">1</span>',
-                power: 'epic',
+                power: 'rare',
                 bd: ['laan'],
                 officers: ['411','211','stonn'],
                 shipType: false,
@@ -1890,10 +1901,29 @@
                 description: false
               },
               {
-                cid: 'CB<span class="warning">1</span>',
+                cid: 'CB<span class="warning">2</span>',
                 power: 'epic',
                 bd: ['laan'],
+                officers: ['411','mavery','stonn'],
+                divider: true,
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                cid: 'CB<span class="warning">3</span>',
+                power: 'rare',
+                bd: ['laan'],
                 officers: ['411','211','betor'],
+                shipType: 'survey',
+                ship: 'Amalgam',
+                description: false
+              },
+              {
+                cid: 'CB<span class="warning">4</span>',
+                power: 'epic',
+                bd: ['laan'],
+                officers: ['411','mavery','betor'],
                 shipType: 'survey',
                 ship: 'Amalgam',
                 description: false
