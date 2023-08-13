@@ -59,6 +59,7 @@
           <div class="col-xs-2-3 col-sm-1-3 col-md-1-3 col-lg-1-3">
             <img src="img/stfc-logo.png" class="mw">
             <h3 class="text-yellow mt-10">CREW TIPS</h3>
+            <!-- ko if data.lastUpdate --><p class="text-center" data-bind="text: 'Last update: ' + data.lastUpdate()"></p><!-- /ko -->
           </div>
           <div class="col-xs-1-1 col-sm-2-3 col-md-2-3 col-lg-2-3">
             <div class="frow gutters" data-bind="foreach: { data: Object.keys(data.sections[0]), as: 'section' }">
@@ -259,9 +260,24 @@
     });
     var closeHandler = () => { if(modalID) MicroModal.close('modal-1'); modalID=false};
     var openModal = (d,event) => { modalID=true;data.modalData(data.officers[d]); MicroModal.show('modal-1');}
+    var lastUpdate = (() => {
+        fetch("https://api.github.com/repos/dafyk/dafyk.github.io/branches/main")
+          .then(response => {
+            response.json().then(json => {
+              console.log(json.commit.commit.author.date);
+              var date = new Date(json.commit.commit.author.date);
+              data.lastUpdate(date.toLocaleString([], { dateStyle: 'medium'}));
+            });
+          })
+          .catch(error => {
+            console.log(error);
+            return false;
+          });
+      })();
     window.addEventListener("scroll", closeHandler);
 
     var data = {
+      lastUpdate: ko.observable(false),
       modalData: ko.observable({
           img: 'khan.png',
           name: false,
