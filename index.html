@@ -1021,6 +1021,39 @@
           class: 'Science',
           faction: 'None',
           rarity: 'Epic'
+        },
+        bael: {
+          img: 'bael.png',
+          name: 'Ba&apos;el',
+          dname: 'Ba&apos;el',
+          maneuver: 'Ba&apos;el increases the ship&apos;s Weapon Damage by <em class="text-green">25%</em>',
+          ability: 'Ba&apos;el increases the ship&apos;s Armor by <em class="text-green">200%</em> of total Crew Attack',
+          crew: 'KHITOMER&apos;S REVENGE',
+          class: 'Engineering',
+          faction: 'Klingon',
+          rarity: 'Rare'
+        },
+        martok: {
+          img: 'martok.png',
+          name: 'Martok',
+          dname: 'Martok',
+          maneuver: 'Martok increases the ship&apos;s Kinetic Weapon Damage by <em class="text-green">50%</em>',
+          ability: 'Martok increases the ship&apos;s Dodge by <em class="text-green">200%</em> of total Crew Defense',
+          crew: 'KHITOMER&apos;S REVENGE',
+          class: 'Engineering',
+          faction: 'Klingon',
+          rarity: 'Rare'
+        },
+        gowron: {
+          img: 'gowron.png',
+          name: 'Gowron',
+          dname: 'Gowron',
+          maneuver: 'Gowron increases the ship&apos;s Energy Weapon Damage by <em class="text-green">50%</em>',
+          ability: 'Gowron increases the ship&nbsp;s Shield Deflection by <em class="text-green">200%</em> of total Crew Health',
+          crew: 'KHITOMER&apos;S REVENGE',
+          class: 'Science',
+          faction: 'Klingon',
+          rarity: 'Rare'
         }
       },
       sections: [{
@@ -1961,7 +1994,40 @@
                 bd: false,
                 shipType: false,
                 ship: false,
+                divider:true,
                 description: false
+              },
+              {
+                cid: 'CR4<sup class="text-warning">1</sup>',
+                power: 'epic',
+                css: 'or',
+                shipType: 'battleship',
+                ship: 'G5+',
+                description: 'Below deck stacked for <strong class="text-orange">attack</strong>',
+                officers: ['hgworf','rom','bael'],
+                bd: false
+              },
+              {
+                cid: 'CR4<sup class="text-warning">2</sup>',
+                power: 'epic',
+                css: 'or',
+                shipType: 'interceptor',
+                ship: 'G5+',
+                css: 'hide2',
+                description: 'Below deck stacked for <strong class="text-orange">defense</strong>',
+                officers: ['hgworf','rom','martok'],
+                bd: false
+              },
+              {
+                cid: 'CR4<sup class="text-warning">3</sup>',
+                power: 'epic',
+                css: 'or',
+                shipType: 'explorer',
+                ship: 'G5+',
+                css: 'hide3',
+                description: 'Below deck stacked for <strong class="text-orange">health</strong>',
+                officers: ['hgworf','rom','gowron'],
+                bd: false
               }
             ]
           }
