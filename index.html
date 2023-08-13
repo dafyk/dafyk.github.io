@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -33,8 +33,8 @@
   <section class="landing">
     <div class="frow-container">
       <div class="frow gutters">
-        <div class="col-xs-1-1">
-          <img src="img/stfc-logo.png">
+        <div class="col-xxs-1-1 col-xs-1-1">
+          <img src="img/stfc-logo.png" alt="Star Trek Fleet Command logo">
           <h1 class="text-yellow">Crew Tips</h1>
         </div>
       </div>
@@ -57,7 +57,7 @@
       <div class="mt-50 pb-30">
         <div class="frow gutters">
           <div class="col-xs-2-3 col-sm-1-3 col-md-1-3 col-lg-1-3">
-            <img src="img/stfc-logo.png" class="mw">
+            <img src="img/stfc-logo.png" class="mw" alt="Star Trek Fleet Command logo">
             <h3 class="text-yellow mt-10">CREW TIPS</h3>
             <!-- ko if data.lastUpdate --><p class="text-center" data-bind="text: 'Last update: ' + data.lastUpdate()"></p><!-- /ko -->
           </div>
@@ -85,7 +85,7 @@
       <div class="frow-container">
         <div class="mt-100">
         <div class="frow gutters" data-bind="foreach: { data: Object.keys(all), as: 'section' }">
-          <div class="col-xs-2-3 col-sm-1-2 col-md-2-6 col-lg-1-3">
+          <div class="col-xxs-1-1 col-xs-2-3 col-sm-1-2 col-md-2-6 col-lg-1-3">
             <div class="card eq">
               <div class="card-header bg-blue bg-hostiles" data-bind="class: 'bg-' + section">
                 <h2 class="mt-15 text-white" data-bind="html: section">Hostiles</h2>
@@ -127,20 +127,20 @@
           <div class="or">
           <div class="frow gutters" data-bind="foreach: {data: row, as: 'card'}">
             <!-- ko if: (card['subtitle'] || card['subtitle']===0) --><h3 class="text-teal or" data-bind="html: section.sub[card.subtitle].title, css:{'mt-0': $parentContext.$index() == 0}, attr: {id: section.sub[card.subtitle].sid}">Level 27-36</h3><!-- /ko -->
-            <div class="col-xs-2-3 col-sm-1-2 col-md-1-3 or">
+            <div class="col-xxs-1-1 col-xs-2-3 col-sm-1-2 col-md-1-3 or">
               <div class="card" data-bind="class: power">
                 <div class="card-header" data-bind="foreach: officers, as: 'officer'">
                   <div class="officer" data-bind="css: { 'captain relative': $index() == 1 }">
                     <small class="dname" data-bind="html: $root.officers[$data].dname"></small>
-                    <img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name}, click: openModal">
                   </div>
                 </div>
                 <div class="card-body">
                   <!-- ko if: bd -->
                   <small class="text-teal bd">Below deck</small>
                   <div class="frow" data-bind="foreach: bd">
-                    <div class="col-xs-1-4 col-sm-1-4 col-md-1-4">
-                      <div class="officer"><img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal"></div>
+                    <div class="col-xxs-1-4  col-xs-1-4 col-sm-1-4 col-md-1-4">
+                      <div class="officer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: openModal"></div>
                     </div>
                   </div>
                   <!-- /ko -->
@@ -181,22 +181,20 @@
           
           <div class="frow gutters" data-bind="foreach: rows, as: 'row'">
             <!-- ko if: ($data['subtitle'] || $data['subtitle']===0) --><h3 class="text-teal" data-bind="html: section.sub[$data.subtitle].title, css:{'mt-0': $index() == 0}, attr: {id: section.sub[$data.subtitle].sid}">Level 27-36</h3><!-- /ko -->
-            <div class="col-xs-2-3 col-sm-1-2 col-md-1-3" data-bind="css: {'or': $data['css']}">
+            <div class="col-xxs-1-1 col-xs-2-3 col-sm-1-2 col-md-1-3" data-bind="css: {'or': $data['css']}">
               <div class="card" data-bind="css: {'mt-30': $data['trio']}, class: power">
                 <div class="card-header" data-bind="foreach: officers, as: 'officer'">
                   <div class="officer" data-bind="css: { 'captain relative': $index() == 1 }">
                     <small class="dname" data-bind="html: $root.officers[$data].dname"></small>
-                    <img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal" data-micromodal2-trigger2="modal-1">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: openModal" data-micromodal2-trigger2="modal-1">
                   </div>
-                  <!-- div class="officer captain relative"><img src="img/111.png"></div-->
-                  <!-- div class="officer"><img src="img/111.png"></div-->
                 </div>
                 <div class="card-body">
                   <!-- ko if: bd -->
                   <small class="text-teal bd">Below deck</small>
                   <div class="frow" data-bind="foreach: bd">
-                    <div class="col-xs-1-4 col-sm-1-4 col-md-1-4">
-                      <div class="officer"><img src="img/111.png" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img }, click: openModal"></div>
+                    <div class="col-xxs-1-4  col-xs-1-4 col-sm-1-4 col-md-1-4">
+                      <div class="officer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: openModal"></div>
                     </div>
                   </div>
                   <!-- /ko -->
@@ -215,7 +213,7 @@
                 </div>
               </div>
             </div>
-            <!-- ko if: $data['divider'] --><div class="width-100 hidden-xs hidden-sm" data-bind="css: {'hidden-sm': section.rows.length > 6}"></div><!-- /ko -->
+            <!-- ko if: $data['divider'] --><div class="width-100 hidden-xxs hidden-xs"></div><!-- /ko -->
             <!-- ko if: $data['css'] --><div class="divider" data-bind="class: css">&nbsp;</div><!-- /ko -->
           </div>
         </div>
@@ -226,7 +224,7 @@
     <div class="modal-overlay" tabindex="-1" data-micromodal-close>
       <div class="card" data-bind="class: modalData().rarity.toLowerCase()">
         <div class="card-header">
-          <img src="img/khan.png" data-bind="attr:{ src: 'img/' + modalData().img }">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-bind="attr:{ src: 'img/' + modalData().img, alt: 'Officer ' + modalData().name, title: modalData().name }">
           <div class="headers">
             <h2 class="card-title text-white" data-bind="html: modalData().name, class: modalData().rarity.toLowerCase()">Khan Noonien Singh</h2>
             <h5 class="text-gray" data-bind="html: modalData().crew">KHAN'S CREW</h5>
@@ -1755,7 +1753,7 @@
           {
             title: 'Cardassian stations',
             id: 'cardassian-stations',
-            sub: [{title: 'Uncommon', sid: 'cardassian-stations-uncommon'},{title: 'Rare &amp; Epic armadas', sid: 'cardassian-stations-rare-and-epic'}],
+            sub: [{title: 'Uncommon', sid: 'cardassian-stations-uncommon'},{title: 'Rare &amp; Epic', sid: 'cardassian-stations-rare-and-epic'}],
             ammount: 1,
             order: '10',
             joiner: ['one',false,'one',false],

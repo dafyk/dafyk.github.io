@@ -800,7 +800,7 @@ background-color: var(--gray);
   .divider.hide3, .or .divider.hide2 {display: none;}
   .divider.green.hide2 {display: block;}
   .or .card, .aor .card  {margin-top:0;}
-  .frow .or:nth-child(1) .card, .frow .aor:nth-child(1) .card {margin-top:30px;}
+  .frow .or:nth-of-type(1) .card, .frow .aor:nth-of-type(1) .card {margin-top:30px;}
 
   .join.one {
     height: 5rem;
