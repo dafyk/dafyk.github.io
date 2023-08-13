@@ -966,10 +966,21 @@
           name: 'Kathryn Janeway',
           dname: 'Janeway',
           maneuver: 'When you take hull damage from a non-Player hostile or Armada, Kathryn Janeway increases your Shield Mitigation by <em class="text-green">6%</em> for 1 round (cumulative). <br><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
-          ability: 'At the start of combat, Kathryn Janeway increases your Isolytic Cascade damage by <em class="text-green">10%</em> against non-Player hostiles and Armadas.<br><br>Isolytic Cascade multiplies your <em class="text-green">total damage</em>, including <em class="text-green">Isolytic Damage</em>, and all research and other bonuses.',
+          ability: 'At the start of combat, Kathryn Janeway increases your Isolytic Cascade damage by <em class="text-green">10%</em> against non-Player hostiles and Armadas.<br><br>Isolytic Cascade multiplies your <em class="text-green">total damage</em>, including <em class="text-green">Isolytic Damage</em>, and all research and other bonuses',
           crew: 'VOYAGER',
           class: 'Command',
           faction: 'Federation',
+          rarity: 'Epic'
+        },
+        nero: {
+          img: 'nero.png',
+          name: 'Nero',
+          dname: 'Nero',
+          maneuver: 'At the beginning of each round, if the opponent&apos;s ship is <em class="text-warning">Burning</em>, Nero increases the Damage of the weapons by <em class="text-green">40%</em>',
+          ability: 'Every time the ship strikes the opponent with a weapon attack, Nero has a <em class="text-green">25%</em> chance of <em class="text-warning">Burning</em> it for two rounds',
+          crew: 'NERO&apos;S CREW',
+          class: 'Engineering',
+          faction: 'Romulan',
           rarity: 'Epic'
         }
       },
@@ -1136,6 +1147,25 @@
                 css: 'or hide3',
                 description: 'Below deck stacked for <strong class="text-orange">defense</strong>',
                 officers: ['khan','snw_spock','gorkon'],
+                ship: false,
+                divider: true,
+                bd: false
+              },
+              {
+                cid: 'FB2',
+                power: 'epic',
+                shipType: false,
+                description: false,
+                officers: ['tal','crusher','georgiou'],
+                ship: false,
+                bd: false
+              },
+              {
+                cid: 'FB3',
+                power: 'epic',
+                shipType: false,
+                description: false,
+                officers: ['tal','crusher','nero'],
                 ship: false,
                 bd: false
               }
@@ -1313,7 +1343,7 @@
                 shipType: 'battleship',
                 ship: 'Mantis',
                 description: false,
-                officers: ['snw_spock','snw_pike','snw_una'],
+                officers: ['snw_ortegas','snw_pike','snw_una'],
                 divider: true,
                 bd: false
               },
