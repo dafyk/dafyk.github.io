@@ -998,6 +998,18 @@
           class: 'Engineering',
           faction: 'Romulan',
           rarity: 'Epic'
+        },
+        paris: {
+          img: 'paris.png',
+          name: 'Tom Paris',
+          dname: 'Paris',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'When you take damage from a non-Player hostile or Armada, Tom Paris increases your Critical Hit damage by <em class="text-green">5%</em> for 1 round. (cumulative). <br><em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
+          bd: 'At the start of combat against non-Player hostiles or Armadas, Tom Paris increases your Armor, Shield Deflection, and Dodge by <em class="text-green">200%</em> of Defense',
+          crew: 'VOYAGER',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Rare'
         }
       },
       sections: [{
@@ -1124,9 +1136,60 @@
                 power: 'epic',
                 officers: ['511','snw_pike','snw_uhura'],
                 bd: false,
+                divider: true,
                 description: false,
                 shipType: 'interceptor',
                 ship: 'Vi&apos;dar Talios'
+              },
+              {
+                cid: 'BP9<sup class="text-warning">1</sup>',
+                power: 'epic',
+                shipType: 'interceptor',
+                ship: 'Vi&apos;dar Talios',
+                css: 'or',
+                description: false,
+                officers: ['tores','janeway','doctor'],
+                bd: false
+              },
+              {
+                cid: 'BP9<sup class="text-warning">2</sup>',
+                power: 'epic',
+                shipType: 'interceptor',
+                css: 'or hide2',
+                description: false,
+                officers: ['tores','janeway','crusher'],
+                ship: 'Vi&apos;dar Talios',
+                bd: false
+              },
+              {
+                cid: 'BP9<sup class="text-warning">3</sup>',
+                power: 'epic',
+                shipType: 'interceptor',
+                css: 'or hide3',
+                description: false,
+                officers: ['tores','janeway','snw_uhura'],
+                ship: 'Vi&apos;dar Talios',
+                divider: true,
+                bd: false
+              },
+              {
+                cid: 'BP10',
+                power: 'rare',
+                shipType: 'interceptor',
+                description: false,
+                officers: ['tores','janeway','511'],
+                bd: ['paris'],
+                ship: 'Vi&apos;dar Talios'
+              },
+              {
+                cid: 'BP11',
+                power: 'rare',
+                shipType: 'interceptor',
+                description: false,
+                officers: ['tores','janeway','411'],
+                bd: ['paris'],
+                ship: 'Vi&apos;dar Talios',
+                divider: true
               }
             ]
           },
@@ -1497,7 +1560,7 @@
               }],
               [{
                 cid: 'EC<span class="warning">3</span>',
-                power: 'epic',
+                power: 'rare',
                 description: '<h4 class="text-info">PARTICIPANTS</h4>',
                 css: 'two blue',
                 officers: ['611','511','miles'],
