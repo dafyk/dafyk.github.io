@@ -30,7 +30,7 @@
 </head>
 
 <body>
-  <section class="landing">
+  <section class="landing" data-bind="class: data.randomBg()">
     <div class="frow-container">
       <div class="frow gutters">
         <div class="col-xxs-1-1 col-xs-1-1">
@@ -39,19 +39,12 @@
         </div>
       </div>
     </div>
-
-    <div id="CrossFade">
-      <div class='pic' id='bg1'></div>
-      <div class='pic' id='bg2'></div>
-      <div class='pic' id='bg3'></div>
-      <div class='pic' id='bg4'></div>
-      <div class='pic' id='bg5'></div>
-    </div>
   </section>
   <!-- ko template: { name: 'toc', foreach: data.sections[0], as: 'all' } --><!-- /ko --> 
   <!-- ko template: { name: 'hostiles', foreach: data.sections[0].hostiles, as: 'section' } --><!-- /ko --> 
   <!-- ko template: { name: 'armadas', foreach: data.sections[0].armadas, as: 'section' } --><!-- /ko --> 
-  <!-- ko template: { name: 'hostiles', foreach: data.sections[0].various, as: 'section' } --><!-- /ko --> 
+  <!-- ko template: { name: 'hostiles', foreach: data.sections[0].various, as: 'section', afterRender: afterRenderCallback } --><!-- /ko -->
+  
   <footer>
     <div class="frow-container">
       <div class="mt-50 pb-30">
@@ -77,9 +70,68 @@
       </div>
     </div>
     <div class="text-center pb-20">
-      &copy; 2023 - Made for alliance <span class="text-light">[404] Does not Exist</span> on Server 155
+      &copy; 2023 - Made for alliance <span class="text-light">[404]&nbsp;Does&nbsp;not&nbsp;Exist</span> on Server 155
     </div>
   </footer>
+  
+  <div class="tips " data-bind="css: {isVisible: data.sectionTips.status}">
+    <div class="tip" data-bind="click: data.openTips, css: {ring: data.sectionTips.status() && !data.sectionTips.show()}"><span class="icn icon-notifications_on" data-bind="css: {'icon-notifications_on': !data.sectionTips.show(), 'icon-cancel': data.sectionTips.show}"></span></div>
+    <div class="sectionTips" data-bind="template: { name: data.sectionTips.template}, css: {open: data.sectionTips.show}"></div>
+  </div>
+  <script type="text/html" id="empty"></script>  
+  <script type="text/html" id="borg-probes-tip">
+    <h4>General Tip for<br> Borg Probes</h4>
+    <div class="info-row">
+      <div class="mr-10 img"><img src="img/hugh.png" data-bind="click: () => data.openModal('hugh')"></div>
+      <div class="flex-grow">
+        <span>Use <strong class="text-teal">Hugh</strong> below deck to give a greater critical hit chance against hostiles</span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="mr-10 img"><img src="img/ghalenar.png" data-bind="click: () => data.openModal('ghalenar')"></div>
+      <div class="flex-grow">
+        <span>Use <strong class="text-teal">Ghalenar</strong> below deck to increase Nanoprobe rewards against Borg Probes</span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="mr-10 img"><img src="img/fc-locutus.png"></div>
+      <div class="flex-grow">
+        <strong class="text-teal"><abbr title="Fleet Commander">FC</abbr> Locutus</strong> increases:
+        <ul>
+          <li>Nanoprobe rewards against Borg Probes <em class="badge badge-warning"><abbr title="Command Center">CC</abbr><strong>20</strong></em></li>
+        </ul>
+      </div>
+    </div>
+  </script>
+  <script type="text/html" id="various-boosts-tip">
+    <h4>General Tip for<br> Various Boosts</h4>
+    <div class="info-row">
+      <div class="mr-10 img"><img src="img/fc-kirk.png"></div>
+      <div class="flex-grow">
+        <strong class="text-teal"><abbr title="Fleet Commander">FC</abbr> Kirk</strong> increases:
+        <ul>
+          <li>warp or impulse speed (selectable)</li>
+          <li>protected cargo <em class="badge badge-warning"><abbr title="Command Center">CC</abbr><strong>10</strong></em></li>
+          <li>warp range <em class="badge badge-warning"><abbr title="Command Center">CC</abbr><strong>40</strong></em></li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="mr-10 img"><img src="img/fc-locutus.png"></div>
+      <div class="flex-grow">
+        <strong class="text-teal"><abbr title="Fleet Commander">FC</abbr> Locutus</strong> increases:
+        <ul>
+          <li>cargo capacity on Vi&apos;dar <em class="badge badge-warning"><abbr title="Command Center">CC</abbr><strong>20</strong></em></li>
+          <li>protected cargo <em class="badge badge-warning"><abbr title="Command Center">CC</abbr><strong>40</strong></em></li>
+        </ul>
+      </div>
+    </div>
+  </script>
+
+<!--   <script type="text/html" id="sectionInfo">
+    <div class="sectionInfo" data-bind="template: { name: data.sectionInfo.template}, css: {open: data.sectionInfo.status}"></div>
+  </script>  
+ -->
   <script type="text/html" id="toc">
     <section>
       <div class="frow-container">
@@ -115,7 +167,7 @@
   </script>
 
   <script type="text/html" id="armadas">
-    <section>
+    <section data-bind="attr:{id: 'section-'+section.id}">
       <div class="frow-container">
         <div class="mt-50" data-bind="foreach: { data: rows, as: 'row' }">
           <!-- ko if: $index()==0 -->
@@ -132,7 +184,7 @@
                 <div class="card-header" data-bind="foreach: officers, as: 'officer'">
                   <div class="officer" data-bind="css: { 'captain relative': $index() == 1 }">
                     <small class="dname" data-bind="html: $root.officers[$data].dname"></small>
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name}, click: openModal">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name}, click: data.openModal">
                   </div>
                 </div>
                 <div class="card-body">
@@ -140,7 +192,7 @@
                   <small class="text-teal bd">Below deck</small>
                   <div class="frow" data-bind="foreach: bd">
                     <div class="col-xxs-1-4  col-xs-1-4 col-sm-1-4 col-md-1-4">
-                      <div class="officer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: openModal"></div>
+                      <div class="officer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: data.openModal"></div>
                     </div>
                   </div>
                   <!-- /ko -->
@@ -171,7 +223,7 @@
     </section>
   </script>
   <script type="text/html" id="hostiles">
-    <section>
+    <section data-bind="attr:{id: 'section-'+section.id, 'data-tip': (section.tip)?section.tip:false}">
       <div class="frow-container">
         <div class="mt-50">
           <div class="sticky">
@@ -186,7 +238,7 @@
                 <div class="card-header" data-bind="foreach: officers, as: 'officer'">
                   <div class="officer" data-bind="css: { 'captain relative': $index() == 1 }">
                     <small class="dname" data-bind="html: $root.officers[$data].dname"></small>
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: openModal" data-micromodal2-trigger2="modal-1">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: data.openModal" data-micromodal2-trigger2="modal-1">
                   </div>
                 </div>
                 <div class="card-body">
@@ -194,7 +246,7 @@
                   <small class="text-teal bd">Below deck</small>
                   <div class="frow" data-bind="foreach: bd">
                     <div class="col-xxs-1-4  col-xs-1-4 col-sm-1-4 col-md-1-4">
-                      <div class="officer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: openModal"></div>
+                      <div class="officer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" data-bind="attr:{ src: 'img/' + $root.officers[$data].img, alt: 'Officer ' + $root.officers[$data].name, title: $root.officers[$data].name }, click: data.openModal"></div>
                     </div>
                   </div>
                   <!-- /ko -->
@@ -250,31 +302,80 @@
   <script src="js/micromodal.min.js"></script>
   <!-- <script src="js/main.js"></script> -->
   <script type="text/javascript">
-    let modalID=false;
-    MicroModal.init({
-      openClass: 'is-open',
-      awaitOpenAnimation: true,
-      awaitCloseAnimation: true
-    });
-    var closeHandler = () => { if(modalID) MicroModal.close('modal-1'); modalID=false};
-    var openModal = (d,event) => { modalID=true;data.modalData(data.officers[d]); MicroModal.show('modal-1');}
-    var lastUpdate = (() => {
-        fetch("https://api.github.com/repos/dafyk/dafyk.github.io/branches/main")
-          .then(response => {
-            response.json().then(json => {
-              console.log(json.commit.commit.author.date);
-              var date = new Date(json.commit.commit.author.date);
-              data.lastUpdate(date.toLocaleString([], { dateStyle: 'medium'}));
-            });
-          })
-          .catch(error => {
-            console.log(error);
-            return false;
+    let helpersInit = () => {
+      MicroModal.init({
+        openClass: 'is-open',
+        awaitOpenAnimation: true,
+        awaitCloseAnimation: true
+      });
+
+      fetch("https://api.github.com/repos/dafyk/dafyk.github.io/branches/main")
+        .then(response => {
+          response.json().then(json => {
+            let date = new Date(json.commit.commit.author.date);
+            data.lastUpdate(date.toLocaleString([], { dateStyle: 'medium'}));
           });
-      })();
-    window.addEventListener("scroll", closeHandler);
+        })
+        .catch(error => {
+          console.log(error);
+          return false;
+        });
+  
+      const sections = document.querySelectorAll('section');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if(entry.target.dataset.tip){
+                data.sectionTips.status(true);
+                data.sectionTips.template(entry.target.dataset.tip);
+              } else {
+                data.sectionTips.status(false);
+                data.sectionTips.show(false);
+              }
+            }
+          });
+        },
+        { root: document, rootMargin: '-70% 0px -30% 0px' }
+      );
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    }
 
     var data = {
+      afterRenderCallback: () => helpersInit(),
+      openModal: (d,event) => { 
+        document.addEventListener("scroll", data.closeHandler, {passive: true});
+        data.modalID=true;
+        data.modalData(data.officers[d]); 
+        MicroModal.show('modal-1');
+      },
+      closeHandler: () => { 
+        if(data.modalID) {
+          MicroModal.close('modal-1'); 
+          data.modalID=false; 
+          document.removeEventListener("scroll", data.closeHandler, {passive: true});
+        }
+      },
+      modalID: false,
+      sectionTips: {
+        status:ko.observable(false),
+        show:ko.observable(false),
+        template:ko.observable('empty')
+      }, 
+      openTips: () => {
+        if (data.sectionTips.show()) {
+          console.log('odstranujem listener');
+          document.removeEventListener("scroll", data.openTips);
+        } else {
+          console.log('aplikujem listener');
+          document.addEventListener("scroll", data.openTips);
+        }
+        data.sectionTips.show(!data.sectionTips.show());
+      },
+      randomBg: () => 'bg' + Math.floor(Math.random() * (6 - 1) + 1),
       lastUpdate: ko.observable(false),
       modalData: ko.observable({
           img: 'khan.png',
@@ -309,6 +410,17 @@
           class: 'Science',
           faction: 'Borg',
           rarity: 'Rare'
+        },
+        '311': {
+          img: '311.png',
+          name: '3 of 11',
+          dname: '3 of 11',
+          maneuver: 'Three Of Eleven increases Gas mining speed by <em class="text-green">60%</em>',
+          ability: 'Three Of Eleven increases Protected Cargo by <em class="text-green">300%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Command',
+          faction: 'Borg',
+          rarity: 'Epic'
         },
         '411': {
           img: '411.png',
@@ -375,6 +487,29 @@
           class: 'Command',
           faction: 'Borg',
           rarity: 'Uncommon'
+        },
+        '1111': {
+          img: '1111.png',
+          name: '11 of 11',
+          dname: '11 of 11',
+          maneuver: 'Eleven of Eleven increases Crystal mining speed by <em class="text-green">60%</em>',
+          ability: 'Eleven of Eleven increases Warp Speed by <em class="text-green">30%</em>',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Science',
+          faction: 'Borg',
+          rarity: 'Epic'
+        },
+        ghalenar: {
+          img: 'ghalenar.png',
+          name: 'Ghalenar',
+          dname: 'Ghalenar',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'Ghalenar increases the Faction Reputation gained from Federation, Klingon and Romulan hostiles by <em class="text-green">5%</em>',
+          bd: 'Ghalenar increases Actian Venom and Inert Nanoprobe loot dropped from hostiles by <em class="text-green">10%</em> of their base value',
+          crew: 'UNIMATRIX TWELVE',
+          class: 'Science',
+          faction: 'Borg',
+          rarity: 'Rare'
         },
         cadet_mccoy: {
           img: 'cadet_mccoy.png',
@@ -1052,6 +1187,84 @@
           class: 'Science',
           faction: 'Klingon',
           rarity: 'Rare'
+        },
+        ghrush: {
+          img: 'ghrush.png',
+          name: 'Ghrush',
+          dname: 'Ghrush',
+          maneuver: 'Ghrush increases the Protected Cargo of the ship by <em class="text-green">100%</em>',
+          ability: 'Ghrush increases the Warp Range of the ship by <em class="text-green">6%</em>',
+          crew: 'SYNDICATE',
+          class: 'Command',
+          faction: 'None',
+          rarity: 'Epic'
+        },
+        dupont: {
+          img: 'dupont.png',
+          name: 'Raphaël DuPont',
+          dname: 'DuPont',
+          maneuver: 'Ghrush increases the Protected Cargo of the ship by <em class="text-green">100%</em>',
+          ability: 'Ghrush increases the Warp Range of the ship by <em class="text-green">6%</em>',
+          crew: 'SURVEYORS &amp; MINERS',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        tpring: {
+          img: 'tpring.png',
+          name: 'T&apos;Pring',
+          dname: 'T&apos;Pring',
+          maneuver: 'T&apos;pring increases the Mining Rate of the ship by <em class="text-green">40%</em> when mining Gas',
+          ability: 'T&apos;Pring increases the Protected Cargo by <em class="text-green">50%</em>',
+          crew: 'SURVEYORS &amp; MINERS',
+          class: 'Command',
+          faction: 'Federation',
+          rarity: 'Rare'
+        },
+        barclay: {
+          img: 'barclay.png',
+          name: 'Reginald Barclay',
+          dname: 'Barclay',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'Reginald Barclay increases the base Defense of all Officers by <em class="text-green">5%</em>',
+          bd: 'Reginald Barclay increases the ship&apos;s base Protected Cargo by <em class="text-green">30%</em>',
+          crew: 'HOLODECK',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Epic'
+        },
+        cadet_scotty: {
+          img: 'cadet_scotty.png',
+          name: 'Cadet Montgomery Scott',
+          dname: 'Scotty',
+          maneuver: 'Cadet Scotty increases the Ship Hull Health by <em class="text-green">10%</em>',
+          ability: 'Cadet Scotty increases the Warp Distance of the ship by <em class="text-green">1</em>',
+          crew: 'ANOTHER TIME',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Common'
+        },
+        scotty: {
+          img: 'tos_scotty.png',
+          name: 'TOS Montgomery Scott',
+          dname: 'TOS Scotty',
+          maneuver: 'TOS Scotty increases the Warp Range of Explorers by <em class="text-green">4</em>',
+          ability: 'TOS Scotty increases the Repair Cost Efficiency of the ship by <em class="text-green">10%</em>',
+          crew: 'ANOTHER TIME',
+          class: 'Engineering',
+          faction: 'Federation',
+          rarity: 'Common'
+        },
+        fallback: {
+          img: 'fallback.png',
+          name: '',
+          dname: '',
+          maneuver: '',
+          ability: '',
+          crew: '',
+          class: '',
+          faction: '',
+          rarity: ''
         }
       },
       sections: [{
@@ -1106,6 +1319,7 @@
           id: 'borg-probes',
           sub: [{title: 'Level 27 &mdash; 33', sid: 'borg-probes-low'},{title: 'Level 36+', sid: 'borg-probes-high'}],
           order: '02',
+          tip: 'borg-probes-tip',
           rows: [
               {
                 cid: 'BP1',
@@ -1879,7 +2093,14 @@
           {
             title: 'Various boosts',
             id: 'various-boosts',
-            sub: [{title: 'Impulse boost', sid: 'impulse-boost'},{title: 'Warp boost', sid: 'warp-boost'},{title: 'Cargo boost', sid: 'cargo-boost'}],
+            tip: 'various-boosts-tip',
+            sub: [
+              {title: 'Impulse speed boost', sid: 'impulse-speed-boost'},
+              {title: 'Warp speed boost', sid: 'warp-speed-boost'},
+              {title: 'Warp range boost', sid: 'warp-range-boost'},
+              {title: 'Cargo boost', sid: 'cargo-boost'},
+              {title: 'Protected cargo boost', sid: 'protected-cargo-boost'}
+            ],
             ammount: 3,
             order: '12',
             rows:[
@@ -1913,8 +2134,8 @@
               },
               {
                 subtitle: 1,
-                cid: 'WB<span class="warning">1</span>',
-                power: 'epic',
+                cid: 'WSB<span class="warning">1</span>',
+                power: 'rare',
                 bd: ['miles'],
                 officers: ['helvia','stamets','laan'],
                 shipType: false,
@@ -1922,7 +2143,35 @@
                 description: false
               },
               {
+                cid: 'WSB<span class="warning">2</span>',
+                power: 'epic',
+                bd: ['miles'],
+                officers: ['1111','stamets','laan'],
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
                 subtitle: 2,
+                cid: 'WRB<span class="warning">1</span>',
+                power: 'rare',
+                bd: false,
+                officers: ['ghrush','fallback','cadet_scotty'],
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                cid: 'WRB<span class="warning">2</span>',
+                power: 'epic',
+                bd: false,
+                officers: ['ghrush','scotty','cadet_scotty'],
+                shipType: 'explorer',
+                ship: false,
+                description: false
+              },
+              {
+                subtitle: 3,
                 cid: 'CB<span class="warning">1</span>',
                 power: 'rare',
                 bd: ['laan'],
@@ -1957,6 +2206,26 @@
                 officers: ['411','mavery','betor'],
                 shipType: 'survey',
                 ship: 'Amalgam',
+                description: false
+              },
+              {
+                subtitle: 4,
+                cid: 'PB<span class="warning">1</span>',
+                power: 'rare',
+                bd: ['barclay'],
+                officers: ['tpring','dupont','311'],
+                shipType: false,
+                ship: false,
+                description: false
+              },
+              {
+                cid: 'PB<span class="warning">2</span>',
+                power: 'epic',
+                bd: ['barclay'],
+                officers: ['tpring','ghrush','311'],
+                divider: true,
+                shipType: false,
+                ship: false,
                 description: false
               }
             ]
