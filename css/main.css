@@ -212,7 +212,7 @@ body {
   counter-reset: toc;
 }
 .relative {position: relative;}
-.sticky {position: sticky; top:0;}
+.sticky {position: sticky; top:0; z-index: 0;}
 .mw {max-width: 100%;}
 .flex-grow {flex-grow: 1;}
 
@@ -289,11 +289,11 @@ h4 {
   background-size: cover;
 }
 
-.bg1 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg1.png');background-position: 30% 0;}
-.bg2 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg2.png');background-position: 15% 0;}
-.bg3 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg3.png');background-position: 23% 0;}
-.bg4 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg4.png');background-position: 16% 0;}
-.bg5 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg5.png');background-position: 33% 0;}
+.bg1 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg1.jpg');background-position: 30% 0;}
+.bg2 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg2.jpg');background-position: 15% 0;}
+.bg3 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg3.jpg');background-position: 23% 0;}
+.bg4 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg4.jpg');background-position: 16% 0;}
+.bg5 {background-image: linear-gradient(0deg, #171941, transparent 20%), url('../img/bg5.jpg');background-position: 33% 0;}
 
 .landing img {
   max-width: 100%;
