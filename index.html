@@ -1300,7 +1300,7 @@
         bones: {
           img: 'bones.png',
           name: 'Leonard McCoy',
-          dname: 'McCoy',
+          dname: 'Bones',
           maneuver: 'McCoy gives a bonus of <em class="text-green">20%</em> to all the Officer Abilities of the Officers on the bridge during combat',
           ability: 'Every time the ship gets hit by a weapon attack, McCoy increases the Defense of all the officers on the Bridge by <em class="text-green">10%</em><br> <em>(Weapons with multiple shots will only trigger this ability once per attack)</em>',
           crew: 'ENTERPRISE CREW',
@@ -1517,6 +1517,7 @@
                 css: 'or',
                 description: false,
                 officers: ['tores','janeway','doctor'],
+                trio: true,
                 bd: false
               },
               {
@@ -1550,7 +1551,7 @@
             rows: [
               {
                 cid: 'FB1<sup class="text-warning">1</sup>',
-                power: 'epic',
+                power: 'basic',
                 shipType: 'interceptor',
                 css: 'or',
                 description: 'Below deck stacked for <strong class="text-orange">attack</strong>',
@@ -1560,7 +1561,7 @@
               },
               {
                 cid: 'FB1<sup class="text-warning">2</sup>',
-                power: 'epic',
+                power: 'basic',
                 shipType: 'battleship',
                 css: 'or hide2',
                 description: 'Below deck stacked for <strong class="text-orange">health</strong>',
@@ -1570,7 +1571,7 @@
               },
               {
                 cid: 'FB1<sup class="text-warning">3</sup>',
-                power: 'epic',
+                power: 'basic',
                 shipType: 'explorer',
                 css: 'or hide3',
                 description: 'Below deck stacked for <strong class="text-orange">defense</strong>',
@@ -1579,22 +1580,37 @@
                 divider: true,
                 bd: false
               },
+
               {
-                cid: 'FB2',
-                power: 'rare',
-                shipType: false,
-                description: 'Below deck stacked for <strong class="text-orange">health</strong>',
-                officers: ['tal','crusher','georgiou'],
+                cid: 'FB2<sup class="text-warning">1</sup>',
+                power: 'epic',
+                shipType: 'interceptor',
+                css: 'or',
+                description: 'Below deck stacked for <strong class="text-orange">attack</strong>',
+                officers: ['tal','snw_uhura','georgiou'],
+                trio: true,
                 ship: false,
                 bd: false
               },
               {
-                cid: 'FB3',
-                power: 'rare',
-                shipType: false,
+                cid: 'FB2<sup class="text-warning">2</sup>',
+                power: 'epic',
+                shipType: 'battleship',
+                css: 'or hide2',
                 description: 'Below deck stacked for <strong class="text-orange">health</strong>',
-                officers: ['tal','crusher','nero'],
+                officers: ['tal','snw_ortegas','georgiou'],
                 ship: false,
+                bd: false
+              },
+              {
+                cid: 'FB2<sup class="text-warning">3</sup>',
+                power: 'epic',
+                shipType: 'explorer',
+                css: 'or hide3',
+                description: 'Below deck stacked for <strong class="text-orange">defense</strong>',
+                officers: ['tal','snw_spock','georgiou'],
+                ship: false,
+                divider: false,
                 bd: false
               }
             ]
@@ -1750,10 +1766,6 @@
                 ship: 'Voyager',
                 divider: false
               }
-
-
-
-
             ]
           },
           {
@@ -2180,9 +2192,7 @@
                 ship: 'Vi&apos;Dar'
               }]
             ]
-          }
-
-,
+          },
           {
             title: 'Exchange armadas',
             id: 'xc',
@@ -2205,6 +2215,7 @@
                 description: false,
                 css: 'hide2',
                 officers: ['khan','511','611'],
+                trio: true,
                 bd: false,
                 shipType: false,
                 ship: false
@@ -2215,14 +2226,54 @@
                 description: false,
                 css: 'hide2',
                 officers: ['kirk','leslie','spock'],
+                trio: true,
                 bd: false,
                 shipType: false,
                 ship: false
               }
               ]
             ]
+          },
+          {
+            title: 'Formation armadas',
+            id: 'formation-armadas',
+            ammount: 1,
+            order: '12',
+            joiner: ['join one singlex',false],
+            rows: [
+              [{
+                cid: 'FA<span class="warning">1</span>',
+                power: 'epic',
+                description: '<span>Node 2/3 is susceptible to isolytic damage from <span class="text-orange">EXPLORERS</span></span>',
+                css: false,
+                officers: ['fallback','fallback','fallback'],
+                bd: false,
+                shipType: 'explorer',
+                ship: false
+              }],
+              [{
+                cid: 'FA<span class="warning">2</span>',
+                power: 'epic',
+                description: '<span>Node 1/3 is susceptible to isolytic damage from <span class="text-orange">BATTLESHIPS</span></span>',
+                css: false,
+                officers: ['fallback','fallback','fallback'],
+                bd: false,
+                shipType: 'battleship',
+                ship: false
+              },
+              {
+                cid: 'FA<span class="warning">3</span>',
+                power: 'epic',
+                description: '<span>Node 3/3 is susceptible to isolytic damage from <span class="text-orange">INTERCEPTORS</span></span>',
+                joiner: false,
+                // css: 'hide2',
+                officers: ['fallback','fallback','fallback'],
+                bd: false,
+                shipType: 'interceptor',
+                ship: false
+              }]
+            ]
           }
-
         ],//armadas
         various: [
           {
@@ -2237,7 +2288,7 @@
               {title: 'Protected cargo boost', sid: 'protected-cargo-boost'}
             ],
             ammount: 3,
-            order: '12',
+            order: '13',
             rows:[
               {
                 subtitle: 0,
@@ -2378,7 +2429,7 @@
             title: 'Base cracking',
             id: 'base-cracking',
             tip: 'base-cracking-tip',
-            order: '13',
+            order: '14',
             ammount: 3,
             rows: [
               {
@@ -2417,6 +2468,7 @@
                 ship: 'G4+',
                 description: 'Below deck stacked for <strong class="text-orange">attack</strong>',
                 officers: ['hgworf','rom','bael'],
+                trio: true,
                 bd: false
               },
               {
