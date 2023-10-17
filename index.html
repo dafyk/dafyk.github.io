@@ -1262,7 +1262,7 @@
           crew: 'ANOTHER TIME',
           class: 'Engineering',
           faction: 'Federation',
-          rarity: 'Common'
+          rarity: 'Rare'
         },
         fallback: {
           img: 'fallback.png',
@@ -1329,6 +1329,18 @@
           class: 'Command',
           faction: 'Rogues',
           rarity: 'Epic'
+        },
+        neelix: {
+          img: 'neelix.png',
+          name: 'Neelix',
+          dname: 'Neelix',
+          maneuver: 'This Officer does not have a Captain&apos;s Maneuver. Equipping this Officer as the captain of a ship <em class="text-red">provides no benefit</em>',
+          ability: 'Increases the Cost Efficiency of your ship&spos;s active abilities by <em class="text-green">40%</em> when assigned to the USS Voyager',
+          bd: '<em class="text-green">10%</em> chance each round to apply <em class="text-warning">Burning</em> for 1 round versus non-Player hostiles or Armadas. This ability does not trigger when Tal is assigned to the bridge of your ship',
+          crew: 'VOYAGER',
+          class: 'Science',
+          faction: 'Federation',
+          rarity: 'Rare'
         }
       },
       sections: [{
@@ -1757,6 +1769,16 @@
               },
               {
                cid: 'HG5',
+                power: 'rare',
+                officers: ['neelix','511','tores'],
+                description: 'Increased the cost efficiency of active ability',
+                shipType: 'explorer',
+                ship: 'Voyager',
+                bd: false,
+                divider: true
+              },
+              {
+               cid: 'HG6',
                 power: 'epic',
                 officers: ['lorca','511','janeway'],
                 bd: ['hugh', 'doctor'],
@@ -1766,7 +1788,7 @@
                 divider: false
               },
               {
-               cid: 'HG6',
+               cid: 'HG7',
                 power: 'epic',
                 officers: ['lorca','511','tores'],
                 bd: ['hugh', 'doctor'],
